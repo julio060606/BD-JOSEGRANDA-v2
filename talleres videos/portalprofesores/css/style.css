@@ -1,0 +1,551 @@
+/* ===================== FUENTE GENERAL ===================== */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    color: #000;
+    overflow-x: hidden;
+}
+
+/* ===================== HEADER ===================== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, #0d3380 0%, #3366cc 100%);
+    color: #fff;
+    z-index: 1001;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    height: 70px;
+}
+
+.header .container-fluid {
+    padding: 0 20px;
+}
+
+.header-logo {
+    width: 40px;
+    height: 40px;
+}
+
+.header-profile-img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    object-fit: cover;
+}
+
+.sidebar-toggle {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.sidebar-toggle:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+/* ===================== SIDEBAR ===================== */
+.sidebar {
+    position: fixed;
+    top: 70px;
+    left: -240px;
+    width: 240px;
+    height: calc(100% - 70px);
+    background: linear-gradient(to bottom, 
+                                #b30000 0%,       
+                                #b30000 40%,      
+                                #ff4d4d 50%,      
+                                #3366cc 60%,      
+                                #0d3380 100%);
+    color: #fff;
+    padding-top: 20px;
+    z-index: 1000;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+    transition: left 0.3s ease;
+    overflow-y: auto;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar .brand-logo {
+    width: 80px;
+    height: auto;
+}
+
+.sidebar h5 {
+    color: #fff;
+    margin-top: 10px;
+}
+
+.sidebar .nav-link {
+    color: #fff;
+    padding: 10px 20px;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+    background-color: rgba(255,255,255,0.2);
+    color: #fff;
+    font-weight: 600;
+}
+
+/* ===================== NAV LINKS CON ESPACIO SUAVE ===================== */
+.sidebar ul.nav {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    justify-content: flex-start;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+.sidebar ul.nav li.nav-item {
+    margin-bottom: 15px;
+}
+
+.sidebar .nav-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.sidebar .nav-link i {
+    margin-right: 10px;
+}
+
+/* ===================== OVERLAY ===================== */
+.sidebar-overlay {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ===================== CONTENIDO PRINCIPAL ===================== */
+.content {
+    margin-top: 70px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.content.sidebar-active {
+    margin-left: 240px;
+}
+
+/* ===================== BIENVENIDA ===================== */
+.bienvenida {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.bienvenida .logo-small {
+    width: 60px;
+    height: 60px;
+}
+
+.bienvenida span {
+    font-size: 2rem;
+}
+
+.bienvenida h2 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+/* ===================== CARD PERFIL ===================== */
+.perfil-card {
+    background-color: #ffffff;
+    color: #000;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.perfil-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.perfil-foto {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 4px solid #b30000;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.perfil-foto:hover {
+    transform: scale(1.05);
+}
+
+/* ===================== BOTONES ===================== */
+.btn-primary {
+    background-color: #0d3380;
+    border-color: #0d3380;
+    color: #fff;
+    font-weight: 500;
+}
+
+.btn-primary:hover {
+    background-color: #002060;
+    border-color: #002060;
+}
+
+.btn-success {
+    background-color: #b30000;
+    border-color: #b30000;
+    color: #fff;
+    font-weight: 500;
+}
+
+.btn-success:hover {
+    background-color: #ff1a1a;
+    border-color: #ff1a1a;
+}
+
+/* ===================== CALENDARIO ===================== */
+iframe {
+    border-radius: 12px;
+    width: 100%;
+    height: 420px;
+    border: none;
+}
+
+/* ===================== AVISOS Y CLIMA ===================== */
+.clima-card {
+    background-color: #ffffff;
+    color: #000;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* ===================== PROGRESO ACADÉMICO ===================== */
+.progress {
+    height: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.progress-bar.bg-danger {
+    background-color: #b30000;
+}
+
+.progress-bar.bg-primary {
+    background-color: #0d3380;
+}
+
+/* ===================== BOTÓN WHATSAPP ===================== */
+.btn-wsp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    z-index: 1000;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.btn-wsp:hover {
+    transform: scale(1.1);
+}
+
+/* ===================== ANIMACIONES ===================== */
+.visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.perfil-card, .card, .clima-card, .progress, .carousel, .logo-small {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+/* ===================== ESTILOS ESPECÍFICOS PARA PROFESORES ===================== */
+
+/* Tarjetas de resumen */
+.resumen-card {
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.resumen-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.resumen-card .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.resumen-card .icono {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Tabla de horarios */
+.horario-table th {
+    background-color: #0d3380;
+    color: white;
+    text-align: center;
+}
+
+.horario-table td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.horario-table .hora-actual {
+    background-color: rgba(255, 193, 7, 0.2);
+    font-weight: bold;
+}
+
+/* ===================== RESPONSIVO ===================== */
+@media (min-width: 992px) {
+    .sidebar {
+        left: 0;
+    }
+    
+    .content {
+        margin-left: 240px;
+    }
+    
+    .sidebar-toggle {
+        display: none;
+    }
+    
+    .sidebar-overlay {
+        display: none;
+    }
+}
+
+@media (max-width: 991px) {
+    .bienvenida {
+        flex-direction: column;
+    }
+    
+    .content.sidebar-active {
+        margin-left: 0;
+    }
+}
+
+
+
+
+/* ===================== ESTILOS ESPECÍFICOS PARA CURSOS PROFESOR ===================== */
+.curso-card {
+    background-color: #ffffff;
+    color: #000;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: none;
+    height: 100%;
+}
+
+.curso-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.curso-card .card-title {
+    font-weight: 600;
+    color: #0d3380;
+    margin-bottom: 1rem;
+}
+
+.curso-card p {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.curso-card p strong {
+    color: #495057;
+}
+
+/* Grupos de botones para cursos */
+.curso-card .btn-group {
+    margin-top: 1rem;
+}
+
+.curso-card .btn-group .btn {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.6rem;
+    border-radius: 6px;
+}
+
+/* Progress bars personalizadas */
+.curso-card .progress {
+    height: 20px;
+    border-radius: 10px;
+    background-color: #e9ecef;
+    margin: 1rem 0;
+}
+
+.curso-card .progress-bar {
+    border-radius: 10px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Colores específicos para progress bars */
+.bg-purple {
+    background: linear-gradient(135deg, #6f42c1 0%, #8b5cf6 100%) !important;
+}
+
+/* Modales de cursos */
+.modal-content {
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.modal-header {
+    background: linear-gradient(135deg, #0d3380 0%, #3366cc 100%);
+    color: white;
+    border-radius: 12px 12px 0 0;
+    border: none;
+}
+
+.modal-title {
+    font-weight: 600;
+}
+
+.modal-body h6 {
+    color: #0d3380;
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.modal-body ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.modal-body ul li {
+    margin-bottom: 0.25rem;
+}
+
+/* Tarjetas de resumen */
+.resumen-card .icono {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.resumen-card h4 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.resumen-card p {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 0;
+}
+
+/* Responsive para grupos de botones */
+@media (max-width: 768px) {
+    .curso-card .btn-group {
+        flex-direction: column;
+    }
+    
+    .curso-card .btn-group .btn {
+        margin-bottom: 0.25rem;
+        border-radius: 6px !important;
+    }
+    
+    .curso-card .btn-group .btn:first-child {
+        border-top-left-radius: 6px !important;
+        border-top-right-radius: 6px !important;
+        border-bottom-left-radius: 0 !important;
+    }
+    
+    .curso-card .btn-group .btn:last-child {
+        border-bottom-left-radius: 6px !important;
+        border-bottom-right-radius: 6px !important;
+        border-top-right-radius: 0 !important;
+    }
+}
+
+/* Mejoras para móviles */
+@media (max-width: 576px) {
+    .curso-card {
+        padding: 1rem !important;
+    }
+    
+    .curso-card .card-title {
+        font-size: 1.1rem;
+    }
+    
+    .curso-card p {
+        font-size: 0.8rem;
+    }
+    
+    .resumen-card .card-body {
+        padding: 1rem;
+    }
+    
+    .resumen-card h4 {
+        font-size: 1.5rem;
+    }
+    
+    .resumen-card .icono {
+        font-size: 2rem;
+    }
+}

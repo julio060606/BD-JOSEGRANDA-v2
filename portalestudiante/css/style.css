@@ -1,0 +1,253 @@
+/* ===================== FUENTE GENERAL ===================== */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    color: #000;
+}
+
+/* ===================== SIDEBAR ===================== */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 240px;
+    height: 100%;
+    background: linear-gradient(to bottom, 
+                                #b30000 0%,       
+                                #b30000 40%,      
+                                #ff4d4d 50%,      
+                                #3366cc 60%,      
+                                #0d3380 100%);
+    color: #fff;
+    padding-top: 20px;
+    z-index: 1000;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+    transition: transform 0.5s ease, box-shadow 0.5s ease, filter 0.5s ease;
+}
+
+.sidebar.scroll-up {
+    transform: translateY(0);
+    box-shadow: 2px 0 15px rgba(0,0,0,0.2);
+    filter: brightness(1);
+}
+
+.sidebar.scroll-down {
+    transform: translateY(-15px);
+    box-shadow: 2px 0 25px rgba(0,0,0,0.35);
+    filter: brightness(0.95);
+}
+
+.sidebar .brand-logo {
+    width: 80px;
+    height: auto;
+}
+
+.sidebar h5 {
+    color: #fff;
+    margin-top: 10px;
+}
+
+.sidebar .nav-link {
+    color: #fff;
+    padding: 10px 20px;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+    background-color: rgba(255,255,255,0.2);
+    color: #fff;
+    font-weight: 600;
+}
+/* ===================== NAV LINKS CON ESPACIO SUAVE ===================== */
+.sidebar ul.nav {
+    display: flex;
+    flex-direction: column;
+    height: auto; /* deja que crezcan según su contenido */
+    justify-content: flex-start; /* no ocupa todo el alto */
+    padding-top: 30px; /* espacio desde el logo */
+    padding-bottom: 20px; /* espacio abajo */
+}
+
+.sidebar ul.nav li.nav-item {
+    margin-bottom: 15px; /* espacio entre cada link */
+}
+
+.sidebar .nav-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px; /* más cómodo pero no gigante */
+    font-size: 1.1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.sidebar .nav-link i {
+    margin-right: 10px;
+}
+
+
+/* ===================== CONTENIDO PRINCIPAL ===================== */
+.content {
+    margin-left: 240px;
+    padding: 20px;
+}
+
+/* ===================== BIENVENIDA ===================== */
+.bienvenida {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.bienvenida .logo-small {
+    width: 60px;
+    height: 60px;
+}
+
+.bienvenida span {
+    font-size: 2rem;
+}
+
+.bienvenida h2 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+/* ===================== CARD PERFIL ===================== */
+.perfil-card {
+    background-color: #ffffff;
+    color: #000;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.perfil-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.perfil-foto {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 4px solid #b30000;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.perfil-foto:hover {
+    transform: scale(1.05);
+}
+
+/* ===================== BOTONES ===================== */
+.btn-primary {
+    background-color: #0d3380;
+    border-color: #0d3380;
+    color: #fff;
+    font-weight: 500;
+}
+
+.btn-primary:hover {
+    background-color: #002060;
+    border-color: #002060;
+}
+
+.btn-success {
+    background-color: #b30000;
+    border-color: #b30000;
+    color: #fff;
+    font-weight: 500;
+}
+
+.btn-success:hover {
+    background-color: #ff1a1a;
+    border-color: #ff1a1a;
+}
+
+/* ===================== CALENDARIO ===================== */
+iframe {
+    border-radius: 12px;
+    width: 100%;
+    height: 420px;
+    border: none;
+}
+
+/* ===================== AVISOS Y CLIMA ===================== */
+.clima-card {
+    background-color: #ffffff;
+    color: #000;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* ===================== PROGRESO ACADÉMICO ===================== */
+.progress {
+    height: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.progress-bar.bg-danger {
+    background-color: #b30000;
+}
+
+.progress-bar.bg-primary {
+    background-color: #0d3380;
+}
+
+/* ===================== BOTÓN WHATSAPP ===================== */
+.btn-wsp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366; /* verde WhatsApp */
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    z-index: 1000;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.btn-wsp:hover {
+    transform: scale(1.1);
+}
+
+/* ===================== ANIMACIONES ===================== */
+.visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.perfil-card, .card, .clima-card, .progress, .carousel, .logo-small {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+/* ===================== RESPONSIVO ===================== */
+@media (max-width: 991px) {
+    .content {
+        margin-left: 0;
+    }
+    .bienvenida {
+        flex-direction: column;
+    }
+}

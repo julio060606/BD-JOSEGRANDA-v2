@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto - Colegio Jose Granda</title>
+
+  <!--Icono de la pagina-->
+  <link rel="icon" href="imagenes/logocolegio.png" type="image/png">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Iconos Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="CSS/styleContacto.css">
+</head>
+
+<!-- BARRA SUPERIOR -->
+<div class="bg-dark border-bottom border-accent py-2">
+  <div class="container d-flex justify-content-between small text-white-50">
+    <div><i class="bi bi-clock me-1"></i> Lun - Vier: 07:00 - 21:00</div>
+    <div><i class="bi bi-telephone me-1"></i> +51 971 107 501 • Disponibles <strong class="text-gold">24h</strong></div>
+  </div>
+</div>
+
+<body class="bg-custom-dark">
+
+  <!-- MODAL LOGIN -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark text-light">
+        <div class="modal-header">
+          <h5 class="modal-title text-gold">Iniciar sesión</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form id="loginForm">
+            <div class="mb-3">
+              <label for="email" class="form-label">Correo electrónico</label>
+              <input type="email" class="form-control" id="email" placeholder="Tu correo electrónico" required>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Contraseña</label>
+              <input type="password" class="form-control" id="password" placeholder="Tu contraseña" required>
+            </div>
+            <button type="submit" class="btn btn-warning w-100">Iniciar sesión</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL REGISTRO -->
+  <div class="modal fade" id="registerModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark text-light">
+        <div class="modal-header">
+          <h5 class="modal-title text-gold">Registrarse</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form id="registerForm">
+            <div class="mb-3">
+              <label for="regName" class="form-label">Nombre completo</label>
+              <input type="text" class="form-control" id="regName" placeholder="Tu nombre completo" required>
+            </div>
+            <div class="mb-3">
+              <label for="regEmail" class="form-label">Correo electrónico</label>
+              <input type="email" class="form-control" id="regEmail" placeholder="Tu correo electrónico" required>
+            </div>
+            <div class="mb-3">
+              <label for="regPassword" class="form-label">Contraseña</label>
+              <input type="password" class="form-control" id="regPassword" placeholder="Tu contraseña" required>
+            </div>
+            <button type="submit" class="btn btn-success w-100">Registrarse</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- NAVBAR -->
+  <header class="sticky-top w-100">
+    <nav class="navbar navbar-expand-md navbar-dark py-2">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#" aria-label="Inicio JoseGranda">
+          <img src="imagenes/logocolegio.png" alt="Logo JoseGranda" class="rounded-circle" width="64" height="64"
+            loading="lazy">
+          <span class="fw-bold">I.E.E Jóse Granda</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+          aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-center" id="mainNav">
+          <ul class="navbar-nav text-uppercase fw-semibold">
+            <li class="nav-item px-2"><a class="nav-link" href="index.html">INICIO</a></li>
+            <li class="nav-item px-2"><a class="nav-link" href="servicios.html">SERVICIOS</a></li>
+            <li class="nav-item px-2"><a class="nav-link active" href="contacto.html">CONTACTO</a></li>
+          </ul>
+        </div>
+
+        <div class="d-flex align-items-center ms-auto gap-3">
+          <!-- Dropdown usuario -->
+          <div class="dropdown">
+            <a class="text-white text-decoration-none d-flex align-items-center dropdown-toggle" href="#"
+              id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true" role="button">
+              <i class="bi bi-person-circle fs-5" aria-hidden="true"></i>
+            </a>
+
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="userDropdown">
+              <li><a class="dropdown-item" href="login.html" data-action="login">Iniciar sesión</a></li>
+              <li><a class="dropdown-item" href="registro.html" data-action="register">Registrarse</a></li>
+              <li><a class="dropdown-item" href="/nuevacarpeta/avances/admin.php" data-action="admin">Admin</a></li>
+            </ul>
+          </div>
+
+
+        </div>
+    </nav>
+  </header>
+
+  <!-- SECCIÓN DE CONTACTO -->
+  <section class="section-title text-center mb-5">
+    <h2>CONTÁCTANOS</h2>
+  </section>
+
+  <section class="contact-section py-5">
+    <div class="container">
+
+      <div class="row g-5">
+        <!-- Formulario de contacto -->
+        <div class="col-md-6">
+          <div class="contact-form-card p-4 shadow-sm rounded">
+            <h4 class="mb-4">¡Queremos saber de ti!</h4>
+            <form id="contactForm" method="post" action="mailto:administracion@josegranda.edu.pe" enctype="text/plain">
+              <div class="mb-3">
+                <label for="name" class="form-label">Tu nombre</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+              </div>
+              <div class="mb-3">
+                <label for="emailContact" class="form-label">Correo electrónico</label>
+                <input type="email" class="form-control" id="emailContact" name="email" required>
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Tu mensaje</label>
+                <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-send">Enviar mensaje</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Información y mapa -->
+        <div class="col-md-6">
+          <div class="contact-info-card p-4 shadow-sm rounded">
+            <h4 class="mb-4 text-center">Ubícanos en el mapa</h4>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.2298026921617!2d-77.07562159999999!3d-12.027694299999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105cec693006467%3A0x64e36d3b6968825b!2sInstituci%C3%B3n%20Educativa%20Emblem%C3%A1tica%20Jos%C3%A9%20Granda!5e0!3m2!1ses!2spe!4v1757893177977!5m2!1ses!2spe"
+              width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+            <div class="mt-4">
+              <p><strong>Dirección:</strong> Av. Universitaria, Óvalo s/n, San Martín de Porres 15101</p>
+              <p><strong>Horario:</strong> Lun - Vie: 07:00 - 21:00</p>
+              <p><strong>Teléfono:</strong> +51 971 107 501</p>
+              <p><strong>Email:</strong> administracion@josegranda.edu.pe</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTONES FLOATING -->
+  <a href="https://wa.me/51971107501" class="btn btn-success rounded-circle shadow floating-btn btn-whatsapp"
+    aria-label="WhatsApp">
+    <i class="bi bi-whatsapp fs-4"></i>
+  </a>
+
+  <!-- FOOTER -->
+  <footer class="footer-section py-5 mt-5">
+    <div class="container">
+      <div class="row gy-5">
+        <!-- Información del Colegio -->
+        <div class="col-12 col-md-4">
+          <h3 class="footer-title mb-4">I.E.E. Jose Granda</h3>
+          <p class="footer-text mb-0">Institución Educativa Emblemática</p>
+          <p class="footer-text mt-3"><i class="bi bi-geo-alt me-2"></i>Av. Universitaria, Óvalo s/n, San Martín de
+            Porres 15101</p>
+        </div>
+
+        <!-- Enlaces Rápidos -->
+        <div class="col-12 col-md-4">
+          <h6 class="footer-subtitle mb-4">Enlaces rápidos</h6>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-3"><a href="index.html"><i class="bi bi-caret-right-fill me-2"></i>Inicio</a></li>
+            <li class="mb-3"><a href="#"><i class="bi bi-caret-right-fill me-2"></i>Admisiones</a></li>
+            <li class="mb-3"><a href="servicios.html"><i class="bi bi-caret-right-fill me-2"></i>Servicios</a></li>
+            <li class="mb-3"><a href="#"><i class="bi bi-caret-right-fill me-2"></i>Contacto</a></li>
+          </ul>
+        </div>
+
+        <!-- Redes y Contacto -->
+        <div class="col-12 col-md-4">
+          <h6 class="footer-subtitle mb-4">Síguenos</h6>
+          <div class="d-flex gap-3 mb-4">
+            <a href="https://www.facebook.com/ieejosegranda/?locale=es_LA" class="social-icon facebook" target="_blank"
+              rel="noopener">
+              <i class="bi bi-facebook" aria-hidden="true"></i>
+            </a>
+
+          </div>
+
+          <h6 class="footer-subtitle mb-3">Contacto</h6>
+          <p class="footer-text mb-2"><i class="bi bi-telephone me-2"></i>+51 971 107 501</p>
+          <p class="footer-text mb-0"><i class="bi bi-clock me-2"></i>Lun-Vier: 07:00 - 21:00</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Derechos -->
+    <div class="footer-bottom text-center mt-5 pt-3">
+      © <span id="year"></span> Colegio Jose Granda. Todos los derechos reservados.
+    </div>
+    </div>
+  </footer>
+
+  <script>
+    // Año actual
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Funcionalidad básica para los modales
+    document.addEventListener('DOMContentLoaded', function () {
+      // Login form
+      document.getElementById('loginForm')?.addEventListener('submit', function (e) {
+        e.preventDefault();
+        alert('Función de login en desarrollo');
+      });
+
+      // Register form
+      document.getElementById('registerForm')?.addEventListener('submit', function (e) {
+        e.preventDefault();
+        alert('Función de registro en desarrollo');
+      });
+
+      // Contact form
+      document.getElementById('contactForm')?.addEventListener('submit', function (e) {
+        e.preventDefault();
+        alert('¡Mensaje enviado! Nos pondremos en contacto contigo pronto.');
+        this.reset();
+      });
+    });
+  </script>
+</body>
+
+</html>

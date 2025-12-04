@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>I.E.E. José Granda — Mis Cursos</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Iconos -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Fuente -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/cursos-profesor.css">
+</head>
+<body>
+
+<!-- HEADER -->
+  <header class="header">
+    <div class="container-fluid">
+      <div class="d-flex justify-content-between align-items-center py-2">
+        <!-- Hamburguesa y Logo -->
+        <div class="d-flex align-items-center">
+          <button class="btn sidebar-toggle me-3" type="button">
+            <i class="bi bi-list"></i>
+          </button>
+          <img src="Imagenes/logocolegio.png" alt="Logo Colegio" class="header-logo me-2">
+          <div>
+            <h5 class="mb-0 fw-bold">Portal Docente</h5>
+            <small class="text-white fw-medium">I.E.E. José Granda</small>
+          </div>
+        </div>
+
+        <!-- Perfil del profesor -->
+        <div class="d-flex align-items-center">
+          <div class="text-end me-3 d-none d-md-block">
+            <h6 class="mb-0 fw-bold">Prof. Carlos Mendoza</h6>
+          </div>
+          <img src="Imagenes/profesor.avif" alt="Foto profesor" class="header-profile-img">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SIDEBAR LATERAL -->
+  <nav class="sidebar">
+    <div class="brand text-center py-3">
+      <img src="Imagenes/logocolegio.png" alt="Insignia" class="brand-logo mb-2">
+      <h5 class="fw-bold text-white">I.E.E. José Granda</h5>
+      <small class="text-white-50">Portal Docente</small>
+    </div>
+    <ul class="nav flex-column mt-3">
+      <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door"></i> Inicio</a></li>
+      <li class="nav-item"><a class="nav-link" href="perfil-profesor.html"><i class="bi bi-person"></i> Perfil</a></li>
+      <li class="nav-item"><a class="nav-link" href="cursos-profesor.html"><i class="bi bi-book"></i> Mis Cursos</a></li>
+      <li class="nav-item"><a class="nav-link" href="horario-profesor.html"><i class="bi bi-calendar"></i> Horario</a></li>
+      <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-box-arrow-right"></i> Salir</a></li>
+    </ul>
+  </nav>
+
+  <!-- OVERLAY PARA CERRAR SIDEBAR EN MÓVIL -->
+  <div class="sidebar-overlay"></div>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="content">
+    <div class="container py-4">
+
+      <!-- ENCABEZADO -->
+      <div class="bienvenida d-flex flex-column flex-md-row align-items-center justify-content-center text-center gap-3 mb-4">
+        <img src="Imagenes/logocolegio.png" alt="Insignia" class="logo-small">
+        <div class="d-flex align-items-center gap-2 justify-content-center">
+          <h2 class="fw-bold mb-0">Mis Cursos</h2>
+        </div>
+      </div>
+
+      <div class="text-center mb-4">
+        <p class="text-secondary fs-5 mb-0">Gestión de cursos, calificaciones y asistencia — I.E.E. José Granda</p>
+      </div>
+
+      <!-- ESTADÍSTICAS RÁPIDAS -->
+      <div class="row g-4 mb-4">
+        <div class="col-md-3">
+          <div class="card resumen-card shadow-sm border-primary">
+            <div class="card-body">
+              <div class="icono text-primary">
+                <i class="bi bi-book"></i>
+              </div>
+              <h4 class="fw-bold">5</h4>
+              <p class="mb-0">Cursos Asignados</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card resumen-card shadow-sm border-success">
+            <div class="card-body">
+              <div class="icono text-success">
+                <i class="bi bi-people"></i>
+              </div>
+              <h4 class="fw-bold">142</h4>
+              <p class="mb-0">Estudiantes</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card resumen-card shadow-sm border-warning">
+            <div class="card-body">
+              <div class="icono text-warning">
+                <i class="bi bi-clipboard-check"></i>
+              </div>
+              <h4 class="fw-bold">24</h4>
+              <p class="mb-0">Tareas Pendientes</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card resumen-card shadow-sm border-info">
+            <div class="card-body">
+              <div class="icono text-info">
+                <i class="bi bi-clock-history"></i>
+              </div>
+              <h4 class="fw-bold">8</h4>
+              <p class="mb-0">Clases Esta Semana</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARDS DE CURSOS -->
+      <div class="row g-4">
+
+        <!-- Matemáticas 5°A -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card curso-card p-3 h-100 d-flex flex-column justify-content-between">
+            <div>
+              <h5 class="card-title fw-bold">Matemáticas 5°A</h5>
+              <p><strong>Horario:</strong> Lun y Mié 7:00 - 8:30</p>
+              <p><strong>Aula:</strong> 301</p>
+              <p><strong>Estudiantes:</strong> 28</p>
+              <div class="progress mb-2">
+                <div class="progress-bar bg-primary" style="width: 75%">75% Avance</div>
+              </div>
+            </div>
+            <div class="btn-group w-100" role="group">
+              <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalMatematicas5A">
+                <i class="bi bi-eye"></i> Ver
+              </button>
+              <button class="btn btn-success btn-sm" onclick="abrirCalificaciones('Matemáticas 5°A')">
+                <i class="bi bi-clipboard-check"></i> Notas
+              </button>
+              <button class="btn btn-info btn-sm" onclick="abrirAsistencia('Matemáticas 5°A')">
+                <i class="bi bi-person-check"></i> Asistencia
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Matemáticas 5°B -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card curso-card p-3 h-100 d-flex flex-column justify-content-between">
+            <div>
+              <h5 class="card-title fw-bold">Matemáticas 5°B</h5>
+              <p><strong>Horario:</strong> Mar y Jue 7:00 - 8:30</p>
+              <p><strong>Aula:</strong> 302</p>
+              <p><strong>Estudiantes:</strong> 30</p>
+              <div class="progress mb-2">
+                <div class="progress-bar bg-success" style="width: 70%">70% Avance</div>
+              </div>
+            </div>
+            <div class="btn-group w-100" role="group">
+              <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalMatematicas5B">
+                <i class="bi bi-eye"></i> Ver
+              </button>
+              <button class="btn btn-success btn-sm" onclick="abrirCalificaciones('Matemáticas 5°B')">
+                <i class="bi bi-clipboard-check"></i> Notas
+              </button>
+              <button class="btn btn-info btn-sm" onclick="abrirAsistencia('Matemáticas 5°B')">
+                <i class="bi bi-person-check"></i> Asistencia
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Matemáticas 4°A -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card curso-card p-3 h-100 d-flex flex-column justify-content-between">
+            <div>
+              <h5 class="card-title fw-bold">Matemáticas 4°A</h5>
+              <p><strong>Horario:</strong> Lun y Mié 8:30 - 10:00</p>
+              <p><strong>Aula:</strong> 201</p>
+              <p><strong>Estudiantes:</strong> 29</p>
+              <div class="progress mb-2">
+                <div class="progress-bar bg-info" style="width: 65%">65% Avance</div>
+              </div>
+            </div>
+            <div class="btn-group w-100" role="group">
+              <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalMatematicas4A">
+                <i class="bi bi-eye"></i> Ver
+              </button>
+              <button class="btn btn-success btn-sm" onclick="abrirCalificaciones('Matemáticas 4°A')">
+                <i class="bi bi-clipboard-check"></i> Notas
+              </button>
+              <button class="btn btn-info btn-sm" onclick="abrirAsistencia('Matemáticas 4°A')">
+                <i class="bi bi-person-check"></i> Asistencia
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Matemáticas 4°B -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card curso-card p-3 h-100 d-flex flex-column justify-content-between">
+            <div>
+              <h5 class="card-title fw-bold">Matemáticas 4°B</h5>
+              <p><strong>Horario:</strong> Mar y Jue 8:30 - 10:00</p>
+              <p><strong>Aula:</strong> 202</p>
+              <p><strong>Estudiantes:</strong> 27</p>
+              <div class="progress mb-2">
+                <div class="progress-bar bg-warning" style="width: 60%">60% Avance</div>
+              </div>
+            </div>
+            <div class="btn-group w-100" role="group">
+              <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalMatematicas4B">
+                <i class="bi bi-eye"></i> Ver
+              </button>
+              <button class="btn btn-success btn-sm" onclick="abrirCalificaciones('Matemáticas 4°B')">
+                <i class="bi bi-clipboard-check"></i> Notas
+              </button>
+              <button class="btn btn-info btn-sm" onclick="abrirAsistencia('Matemáticas 4°B')">
+                <i class="bi bi-person-check"></i> Asistencia
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Matemáticas 3°A -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card curso-card p-3 h-100 d-flex flex-column justify-content-between">
+            <div>
+              <h5 class="card-title fw-bold">Matemáticas 3°A</h5>
+              <p><strong>Horario:</strong> Lun y Mié 10:00 - 11:30</p>
+              <p><strong>Aula:</strong> 101</p>
+              <p><strong>Estudiantes:</strong> 31</p>
+              <div class="progress mb-2">
+                <div class="progress-bar bg-danger" style="width: 80%">80% Avance</div>
+              </div>
+            </div>
+            <div class="btn-group w-100" role="group">
+              <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalMatematicas3A">
+                <i class="bi bi-eye"></i> Ver
+              </button>
+              <button class="btn btn-success btn-sm" onclick="abrirCalificaciones('Matemáticas 3°A')">
+                <i class="bi bi-clipboard-check"></i> Notas
+              </button>
+              <button class="btn btn-info btn-sm" onclick="abrirAsistencia('Matemáticas 3°A')">
+                <i class="bi bi-person-check"></i> Asistencia
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Matemáticas 3°B -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card curso-card p-3 h-100 d-flex flex-column justify-content-between">
+            <div>
+              <h5 class="card-title fw-bold">Matemáticas 3°B</h5>
+              <p><strong>Horario:</strong> Mar y Jue 10:00 - 11:30</p>
+              <p><strong>Aula:</strong> 102</p>
+              <p><strong>Estudiantes:</strong> 28</p>
+              <div class="progress mb-2">
+                <div class="progress-bar bg-purple" style="width: 75%">75% Avance</div>
+              </div>
+            </div>
+            <div class="btn-group w-100" role="group">
+              <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalMatematicas3B">
+                <i class="bi bi-eye"></i> Ver
+              </button>
+              <button class="btn btn-success btn-sm" onclick="abrirCalificaciones('Matemáticas 3°B')">
+                <i class="bi bi-clipboard-check"></i> Notas
+              </button>
+              <button class="btn btn-info btn-sm" onclick="abrirAsistencia('Matemáticas 3°B')">
+                <i class="bi bi-person-check"></i> Asistencia
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- BOTÓN WHATSAPP FLOTANTE -->
+      <a href="https://wa.me/51999999999" target="_blank" class="btn-wsp" aria-label="WhatsApp" title="Contactar por WhatsApp">
+        <i class="bi bi-whatsapp"></i>
+      </a>
+
+    </div>
+  </main>
+
+  <!-- MODALES DE CURSOS -->
+  <!-- Modal Matemáticas 5°A -->
+  <div class="modal fade" id="modalMatematicas5A" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Matemáticas 5°A - Detalles del Curso</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6">
+              <p><strong>Profesor:</strong> Carlos Mendoza</p>
+              <p><strong>Horario:</strong> Lunes y Miércoles 7:00 - 8:30</p>
+              <p><strong>Aula:</strong> 301</p>
+              <p><strong>Estudiantes:</strong> 28</p>
+            </div>
+            <div class="col-md-6">
+              <p><strong>Periodo:</strong> 2024 - I</p>
+              <p><strong>Avance:</strong> 75%</p>
+              <p><strong>Próxima Evaluación:</strong> 25 Oct</p>
+              <p><strong>Tareas Pendientes:</strong> 3</p>
+            </div>
+          </div>
+          
+          <h6 class="mt-3">Temario:</h6>
+          <ul>
+            <li>Álgebra y ecuaciones</li>
+            <li>Geometría analítica</li>
+            <li>Trigonometría</li>
+            <li>Estadística descriptiva</li>
+          </ul>
+          
+          <div class="progress mb-2">
+            <div class="progress-bar bg-primary" style="width: 75%">75% completado</div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-success" onclick="abrirCalificaciones('Matemáticas 5°A')">
+            <i class="bi bi-clipboard-check"></i> Gestionar Calificaciones
+          </button>
+          <button class="btn btn-info" onclick="abrirAsistencia('Matemáticas 5°A')">
+            <i class="bi bi-person-check"></i> Gestionar Asistencia
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Los otros modales seguirían la misma estructura -->
+  <!-- Modal Matemáticas 5°B -->
+  <div class="modal fade" id="modalMatematicas5B" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Matemáticas 5°B - Detalles del Curso</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Contenido similar al modal anterior -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/cursos-profesor.js"></script>
+</body>
+</html>

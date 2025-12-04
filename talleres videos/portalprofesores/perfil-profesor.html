@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>I.E.E. José Granda — Perfil Docente</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Iconos -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Fuente -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/perfil-profesor.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container-fluid">
+      <div class="d-flex justify-content-between align-items-center py-2">
+        <!-- Hamburguesa y Logo -->
+        <div class="d-flex align-items-center">
+          <button class="btn sidebar-toggle me-3" type="button">
+            <i class="bi bi-list"></i>
+          </button>
+          <img src="Imagenes/logocolegio.png" alt="Logo Colegio" class="header-logo me-2">
+          <div>
+            <h5 class="mb-0 fw-bold">Portal Docente</h5>
+            <small class="text-white fw-medium">I.E.E. José Granda</small>
+          </div>
+        </div>
+
+        <!-- Perfil del profesor -->
+        <div class="d-flex align-items-center">
+          <div class="text-end me-3 d-none d-md-block">
+            <h6 class="mb-0 fw-bold">Prof. Carlos Mendoza</h6>
+          </div>
+          <img src="Imagenes/profesor.avif" alt="Foto profesor" class="header-profile-img">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SIDEBAR LATERAL -->
+  <nav class="sidebar">
+    <div class="brand text-center py-3">
+      <img src="Imagenes/logocolegio.png" alt="Insignia" class="brand-logo mb-2">
+      <h5 class="fw-bold text-white">I.E.E. José Granda</h5>
+      <small class="text-white-50">Portal Docente</small>
+    </div>
+    <ul class="nav flex-column mt-3">
+      <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door"></i> Inicio</a></li>
+      <li class="nav-item"><a class="nav-link active" href="perfil-profesor.html"><i class="bi bi-person"></i> Perfil</a></li>
+      <li class="nav-item"><a class="nav-link" href="cursos-profesor.html"><i class="bi bi-book"></i> Mis Cursos</a></li>
+      <li class="nav-item"><a class="nav-link" href="horario-profesor.html"><i class="bi bi-calendar"></i> Horario</a></li>
+      <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-box-arrow-right"></i> Salir</a></li>
+    </ul>
+  </nav>
+
+  <!-- OVERLAY PARA CERRAR SIDEBAR EN MÓVIL -->
+  <div class="sidebar-overlay"></div>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="content">
+    <div class="container py-4">
+
+      <!-- BIENVENIDA -->
+      <div class="bienvenida d-flex flex-column flex-md-row align-items-center justify-content-center text-center gap-3 mb-4">
+        <img src="Imagenes/logocolegio.png" alt="Insignia" class="logo-small">
+        <div class="d-flex align-items-center gap-2 justify-content-center">
+          <h2 class="fw-bold mb-0">Perfil de Prof. Carlos Mendoza</h2>
+        </div>
+      </div>
+
+      <!-- SECCIÓN INFORMACIÓN PERSONAL -->
+      <div class="row g-4 mb-4" id="perfil-info">
+
+        <!-- Perfil -->
+        <div class="col-lg-6">
+          <div class="card perfil-card shadow-sm h-100 d-flex flex-column justify-content-between">
+            <div class="card-body d-flex flex-column align-items-center text-center">
+              <img src="Imagenes/profesor.avif" alt="Foto profesor" class="perfil-foto mb-3" id="fotoPerfil">
+              <h5 class="fw-bold mb-2">Prof. Carlos Mendoza</h5>
+              <p class="mb-1"><strong>Código:</strong> PRO-2023001 <small class="text-muted">(Para cambiar, acercarse a Dirección)</small></p>
+              <p class="mb-1"><strong>Especialidad:</strong> Matemáticas <small class="text-muted">(Para cambiar, acercarse a Dirección)</small></p>
+              <p class="mb-1"><strong>Años de servicio:</strong> 8 <small class="text-muted">(Para cambiar, acercarse a Dirección)</small></p>
+              <p class="mb-1"><strong>Tipo de contrato:</strong> Nombrado</p>
+              <p class="mb-1"><strong>Fecha de ingreso:</strong> 15/03/2016</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Configuración de Perfil -->
+        <div class="col-lg-6">
+          <div class="card shadow-sm h-100 d-flex flex-column justify-content-between">
+            <div class="card-body">
+              <h5 class="card-header mb-3">⚙️ Configuración de Perfil</h5>
+              <p>Opciones disponibles:</p>
+              <ul>
+                <li>Cambiar contraseña</li>
+                <li>Cambiar foto</li>
+              </ul>
+
+              <!-- Formulario cambiar contraseña -->
+              <div class="mb-2" id="cambiarContraForm" style="display:none;">
+                <label class="form-label">Nueva Contraseña</label>
+                <input type="password" class="form-control" id="nuevaContra">
+                <label class="form-label mt-2">Confirmar Contraseña</label>
+                <input type="password" class="form-control" id="confirmarContra">
+              </div>
+
+              <!-- Formulario cambiar foto -->
+              <div class="mb-2" id="cambiarFotoForm" style="display:none;">
+                <label class="form-label">Seleccionar nueva foto</label>
+                <input type="file" class="form-control" id="inputFoto" accept="image/*">
+              </div>
+
+              <!-- Botones uniformes -->
+              <div class="d-flex gap-2 mt-3 flex-wrap">
+                <button class="btn btn-warning btn-sm flex-grow-1" id="btnCambiarContra">Cambiar Contraseña</button>
+                <button class="btn btn-success btn-sm flex-grow-1" id="btnGuardarContra" style="display:none;">Guardar</button>
+                <button class="btn btn-secondary btn-sm flex-grow-1" id="btnCancelarContra" style="display:none;">Cancelar</button>
+                <button class="btn btn-primary btn-sm flex-grow-1" id="btnCambiarFoto">Cambiar Foto</button>
+                <button class="btn btn-success btn-sm flex-grow-1" id="btnGuardarFoto" style="display:none;">Guardar Foto</button>
+                <button class="btn btn-secondary btn-sm flex-grow-1" id="btnCancelarFoto" style="display:none;">Cancelar</button>
+              </div>
+              <div id="mensajeContra" class="mt-2"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Información de Contacto -->
+      <div class="row g-4 mb-4">
+        <div class="col-12">
+          <div class="card shadow-sm p-3">
+            <h5 class="card-header mb-3">📬 Información de Contacto</h5>
+            
+            <div class="row g-2">
+              <div class="col-md-6 mb-2">
+                <label class="form-label"><strong>Correo Institucional:</strong></label>
+                <input type="email" class="form-control" id="contactCorreo" value="cmendoza@josegranda.edu.pe" disabled>
+              </div>
+              <div class="col-md-6 mb-2">
+                <label class="form-label"><strong>Correo Personal:</strong></label>
+                <input type="email" class="form-control" id="contactCorreoPersonal" value="carlos.mendoza@email.com" disabled>
+              </div>
+              <div class="col-md-6 mb-2">
+                <label class="form-label"><strong>Teléfono:</strong></label>
+                <input type="text" class="form-control" id="contactTelefono" value="+51 999 999 999" disabled>
+              </div>
+              <div class="col-md-6 mb-2">
+                <label class="form-label"><strong>Teléfono Emergencia:</strong></label>
+                <input type="text" class="form-control" id="contactTelefonoEmergencia" value="+51 988 888 888" disabled>
+              </div>
+              <div class="col-md-6 mb-2">
+                <label class="form-label"><strong>Dirección:</strong></label>
+                <input type="text" class="form-control" id="contactDireccion" value="Av. Ejemplo 123, Lima" disabled>
+              </div>
+              <div class="col-md-6 mb-2">
+                <label class="form-label"><strong>Distrito:</strong></label>
+                <input type="text" class="form-control" id="contactDistrito" value="San Miguel" disabled>
+              </div>
+              <div class="col-12 mb-2">
+                <label class="form-label"><strong>Información Médica (Emergencias):</strong></label>
+                <textarea class="form-control" id="contactInfoMedica" rows="2" disabled>Ninguna alergia conocida. Grupo sanguíneo: O+</textarea>
+              </div>
+            </div>
+
+            <!-- Botones uniformes -->
+            <div class="d-flex gap-2 mt-3 flex-wrap">
+              <button class="btn btn-primary btn-sm flex-grow-1" id="btnEditarContacto">Editar Información</button>
+              <button class="btn btn-success btn-sm flex-grow-1" id="btnGuardarContacto" style="display:none;">Guardar</button>
+              <button class="btn btn-secondary btn-sm flex-grow-1" id="btnCancelarContacto" style="display:none;">Cancelar</button>
+            </div>
+            <div id="mensajeContacto" class="mt-2"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Información Académica -->
+      <div class="row g-4 mb-4">
+        <div class="col-12">
+          <div class="card shadow-sm p-3">
+            <h5 class="card-header mb-3">📚 Información Académica</h5>
+            
+            <div class="row g-2">
+              <div class="col-md-6 mb-2">
+                <label class="form-label"><strong>Título Profesional:</strong></label>
+                <input type="text" class="form-control" id="infoTitulo" value="Licenciado en Educación - Matemáticas" disabled>
+              </div>
+              <div class="col-md-6 mb-2">
+                <label class="form-label"><strong>Universidad:</strong></label>
+                <input type="text" class="form-control" id="infoUniversidad" value="Universidad Nacional de Educación" disabled>
+              </div>
+              <div class="col-md-6 mb-2">
+                <label class="form-label"><strong>Grados Académicos:</strong></label>
+                <input type="text" class="form-control" id="infoGrados" value="Bachiller en Educación, Licenciado en Educación" disabled>
+              </div>
+              <div class="col-md-6 mb-2">
+                <label class="form-label"><strong>Cursos de Especialización:</strong></label>
+                <input type="text" class="form-control" id="infoEspecializacion" value="Didáctica de las Matemáticas, Evaluación Educativa" disabled>
+              </div>
+              <div class="col-12 mb-2">
+                <label class="form-label"><strong>Experiencia Laboral:</strong></label>
+                <textarea class="form-control" id="infoExperiencia" rows="3" disabled>8 años de experiencia en educación secundaria. Especializado en matemáticas para niveles de 1° a 5° de secundaria. Coordinador del área de matemáticas desde 2020.</textarea>
+              </div>
+            </div>
+
+            <!-- Botones uniformes -->
+            <div class="d-flex gap-2 mt-3 flex-wrap">
+              <button class="btn btn-primary btn-sm flex-grow-1" id="btnEditarAcademica">Editar Información</button>
+              <button class="btn btn-success btn-sm flex-grow-1" id="btnGuardarAcademica" style="display:none;">Guardar</button>
+              <button class="btn btn-secondary btn-sm flex-grow-1" id="btnCancelarAcademica" style="display:none;">Cancelar</button>
+            </div>
+            <div id="mensajeAcademica" class="mt-2"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BOTÓN WHATSAPP FLOTANTE -->
+      <a href="https://wa.me/51999999999" target="_blank" class="btn-wsp" aria-label="WhatsApp" title="Contactar por WhatsApp">
+        <i class="bi bi-whatsapp"></i>
+      </a>
+
+    </div>
+  </main>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/perfil-profesor.js"></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - I.E.E José Granda</title>
+  <link rel="stylesheet" href="CSS/registro.css">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- VENTANA FLOTANTE DE REGISTRO EXITOSO -->
+<div id="registroModal" class="welcome-modal" style="display: none;">
+  <div class="welcome-content">
+    <div class="welcome-header">
+      <div class="welcome-icon">
+        <i class="bi bi-check-circle-fill text-success"></i>
+      </div>
+      <h1 class="welcome-title">¡Registro exitoso!</h1>
+      <p class="welcome-subtitle">Tu cuenta fue creada correctamente</p>
+    </div>
+    <div class="welcome-actions">
+      <button class="welcome-custom-btn" onclick="cerrarRegistro(); return false;">
+        <i class="bi bi-box-arrow-in-right"></i>
+        <span>Iniciar sesión</span>
+      </button>
+    </div>
+  </div>
+</div>
+<!--Boton de registrarse-->
+    <style>
+      .btn-link {
+        display: inline-block;
+        background-color: #ffffff;
+        color: #9D2222;
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 20px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, .1);
+      }
+
+      .btn-link:hover {
+        background-color: #570c0c;
+        color: #ffffff;
+        border-color: #570c0c;
+      }
+    </style>
+  <!-- Botón de regreso -->
+  <a href="index.html" class="back-home">
+    <i class='bx bx-arrow-back'></i>
+  </a>
+
+  <!-- CONTENEDOR LOGIN -->
+  <div class="container-form login">
+    <div class="information">
+      <div class="info-childs">
+        <h2>¿Nuevo aquí?</h2>
+        <p>Si aún no tienes una cuenta, regístrate para acceder a todos los servicios.</p>
+        <a href="registro.html" class="btn-link">Registrarse</a>
+      </div>
+    </div>
+
+    <div class="form-information">
+      <div class="form-information-childs">
+        <h2><strong>Iniciar Sesión</strong></h2>
+        <div class="icons">
+  <a href="google-login.php?origen=login" class="btn-google">
+  <i class="bx bxl-google"></i> Iniciar sesión con Google
+</a>
+</div>
+        <p>o inicia sesión con tu correo registrado</p>
+
+        <form class="form" action="login.php" method="POST" novalidate>
+          <div>
+            <label>
+              <i class='bx bx-envelope'></i>
+              <input type="email" placeholder="Correo electrónico" name="correo" required>
+            </label>
+          </div>
+          <div>
+            <label>
+              <i class='bx bx-lock-alt'></i>
+              <input type="password" placeholder="Contraseña" name="clave" required>
+            </label>
+          </div>
+
+          <input type="submit" value="Ingresar" class="btn">
+          <div class="alerta-error">Correo o contraseña incorrectos</div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script>
+document.addEventListener('DOMContentLoaded', function () {
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('registro') === 'exitoso') {
+    const mensaje = document.createElement('div');
+    mensaje.textContent = '✅ Usuario registrado correctamente';
+    mensaje.style.position = 'fixed';
+    mensaje.style.top = '20px';
+    mensaje.style.right = '20px';
+    mensaje.style.backgroundColor = '#d4edda';
+    mensaje.style.color = '#155724';
+    mensaje.style.padding = '10px 20px';
+    mensaje.style.border = '1px solid #c3e6cb';
+    mensaje.style.borderRadius = '8px';
+    mensaje.style.boxShadow = '0 2px 6px rgba(0,0,0,0.2)';
+    mensaje.style.zIndex = '9999';
+    document.body.appendChild(mensaje);
+
+    setTimeout(() => {
+      mensaje.remove();
+      history.replaceState(null, '', window.location.pathname); // Limpia la URL
+    }, 4000);
+  }
+});
+document.getElementById('googleLoginBtn').addEventListener('click', function () {
+  window.location.href = 'oauth.php?accion=login'; // Ajusta según tu endpoint
+});
+</script>
+
+
+</body>
+</html>

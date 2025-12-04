@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I.E.E. José Granda — Calendario de Clases</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="calendario.css">
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<nav class="sidebar">
+  <div class="brand text-center py-3">
+    <img src="Imagenes/logocolegio.png" alt="Insignia" class="brand-logo mb-2">
+    <h5 class="fw-bold text-white">I.E.E. José Granda</h5>
+  </div>
+  <ul class="nav flex-column mt-3">
+    <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door"></i> Inicio</a></li>
+    <li class="nav-item"><a class="nav-link" href="perfil.html"><i class="bi bi-person"></i> Perfil</a></li>
+    <li class="nav-item"><a class="nav-link" href="cursos.html"><i class="bi bi-book"></i> Cursos</a></li>
+    <li class="nav-item"><a class="nav-link" href="calendario.html"><i class="bi bi-calendar"></i> Calendario</a></li>
+    <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-box-arrow-right"></i> Salir</a></li>
+  </ul>
+</nav>
+
+<!-- CONTENIDO PRINCIPAL -->
+<main class="content">
+  <div class="container py-4">
+    <div class="d-flex justify-content-center align-items-center mb-4">
+      <h2 class="fw-bold text-center">📅 Calendario de Clases</h2>
+    </div>
+
+    <div class="calendar-container shadow-sm">
+      <div class="d-flex justify-content-between mb-3">
+        <button id="prevWeek" class="btn btn-calendar btn-sm">◀ Semana Anterior</button>
+        <h4 id="currentWeek" class="text-center flex-grow-1"></h4>
+        <button id="nextWeek" class="btn btn-calendar btn-sm">Semana Siguiente ▶</button>
+      </div>
+
+      <div class="calendar-grid">
+        <div class="time-column"></div>
+        <div class="days-columns"></div>
+      </div>
+
+      <div class="text-center mt-3">
+        <span id="currentTime"></span>
+      </div>
+    </div>
+
+    <!-- PANEL DE INFORMACIÓN DE CLASE -->
+    <div class="class-info-panel" id="classPanel">
+      <span class="close-panel" id="closePanel">&times;</span>
+      <div id="panelContent"></div>
+    </div>
+
+    <!-- BOTÓN WHATSAPP -->
+    <a href="https://wa.me/51999999999" target="_blank" class="btn-wsp">
+      <i class="bi bi-whatsapp"></i>
+    </a>
+
+  </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+const links = document.querySelectorAll('.sidebar .nav-link');
+links.forEach(link => {
+  if(link.href === window.location.href){
+    link.classList.add('active');
+  }
+});
+
+const classSchedules = [
+  { course: 'Matemáticas', professor: 'Juan Pérez', days: ['Lunes','Miércoles'], time: '08:00 - 09:30', color:'#0d3380' },
+  { course: 'Lengua y Literatura', professor: 'María López', days: ['Martes','Jueves'], time: '09:30 - 11:00', color:'#28a745' },
+  { course: 'Receso', professor: '', days: ['Lunes','Martes','Miércoles','Jueves','Viernes'], time: '11:00 - 11:30', color:'#6c757d' },
+  { course: 'Historia', professor: 'Ana Torres', days: ['Viernes'], time: '11:30 - 13:00', color:'#ffc107' },
+  { course: 'Física', professor: 'Carlos Ruiz', days: ['Lunes','Miércoles'], time: '11:30 - 13:00', color:'#dc3545' },
+  { course: 'Química', professor: 'Rosa Méndez', days: ['Martes','Jueves'], time: '13:00 - 14:30', color:'#17a2b8' },
+  { course: 'Biología', professor: 'Laura Ramos', days: ['Miércoles','Viernes'], time: '14:30 - 16:00', color:'#28a745' },
+  { course: 'Inglés', professor: 'David Smith', days: ['Lunes','Miércoles'], time: '14:30 - 16:00', color:'#0d3380' },
+  { course: 'Educación Física', professor: 'Pedro Martínez', days: ['Martes','Jueves'], time: '14:30 - 16:00', color:'#ffc107' },
+  { course: 'Arte', professor: 'Carmen Diaz', days: ['Viernes'], time: '14:30 - 16:00', color:'#17a2b8' }
+];
+
+let currentDate = new Date();
+
+function renderCalendar(date){
+  const startOfWeek = new Date(date);
+  startOfWeek.setDate(date.getDate() - date.getDay() + 1); 
+  const endOfWeek = new Date(startOfWeek);
+  endOfWeek.setDate(startOfWeek.getDate() + 4);
+
+  const options = { day: 'numeric', month: 'short', year:'numeric' };
+  document.getElementById('currentWeek').textContent = 
+    `${startOfWeek.toLocaleDateString('es-PE', options)} - ${endOfWeek.toLocaleDateString('es-PE', options)}`;
+
+  const hours = [];
+  for(let h=8; h<=16; h+=0.5){ hours.push(h); }
+
+  const timeColumn = document.querySelector('.time-column');
+  const daysColumns = document.querySelector('.days-columns');
+  timeColumn.innerHTML = '';
+  daysColumns.innerHTML = '';
+  daysColumns.style.display = 'flex';
+
+  hours.forEach(h=>{
+    const div = document.createElement('div');
+    div.className='time-slot';
+    let hour = Math.floor(h);
+    let minutes = h%1===0? '00' : '30';
+    div.textContent = `${hour.toString().padStart(2,'0')}:${minutes}`;
+    timeColumn.appendChild(div);
+  });
+
+  const dayNames = ['Lunes','Martes','Miércoles','Jueves','Viernes'];
+  dayNames.forEach(d=>{
+    const col = document.createElement('div');
+    col.className='day-column';
+    col.dataset.day = d;
+    col.style.position='relative';
+    hours.forEach(h=>{
+      const slot = document.createElement('div');
+      slot.className='slot';
+      slot.style.height='25px';
+      col.appendChild(slot);
+    });
+    daysColumns.appendChild(col);
+  });
+
+  // BLOQUES CON ANIMACIÓN POR RETRASO
+  classSchedules.forEach((c,index)=>{
+    c.days.forEach(d=>{
+      const col = [...document.querySelectorAll('.day-column')].find(x=>x.dataset.day===d);
+      if(col){
+        const [start,end] = c.time.split(' - ');
+        const startH = parseInt(start.split(':')[0],10) + parseInt(start.split(':')[1])/60;
+        const endH = parseInt(end.split(':')[0],10) + parseInt(end.split(':')[1])/60;
+        const duration = (endH-startH)*50; 
+        const top = (startH-8)*50;
+        const block = document.createElement('div');
+        block.className='class-block';
+        block.style.top = top+'px';
+        block.style.height = duration+'px';
+        block.style.backgroundColor = c.color;
+        block.innerHTML=`<strong>${c.course}</strong><br>${c.time}<br>${c.professor}`;
+        block.addEventListener('click',()=>showPanel(c));
+        col.appendChild(block);
+
+        // Animación secuencial
+        setTimeout(()=>{ block.classList.add('show'); }, index*150);
+      }
+    });
+  });
+}
+
+const panel = document.getElementById('classPanel');
+const panelContent = document.getElementById('panelContent');
+document.getElementById('closePanel').addEventListener('click',()=>{panel.classList.remove('show-panel');});
+
+function showPanel(c){
+  panelContent.innerHTML = `<h5>${c.course}</h5><p><strong>Profesor:</strong> ${c.professor || '-'}</p><p><strong>Horario:</strong> ${c.time}</p>`;
+  panel.style.top = (window.innerHeight/2 - panel.offsetHeight/2) + 'px';
+  panel.style.left = (window.innerWidth/2 - panel.offsetWidth/2) + 'px';
+  panel.classList.add('show-panel');
+}
+
+document.getElementById('prevWeek').addEventListener('click',()=>{
+  currentDate.setDate(currentDate.getDate()-7);
+  renderCalendar(currentDate);
+});
+document.getElementById('nextWeek').addEventListener('click',()=>{
+  currentDate.setDate(currentDate.getDate()+7);
+  renderCalendar(currentDate);
+});
+
+function updateTime(){
+  const now = new Date();
+  const timeStr = now.toLocaleTimeString('es-PE',{hour:'2-digit',minute:'2-digit',second:'2-digit'});
+  document.getElementById('currentTime').textContent = `Hora actual: ${timeStr}`;
+}
+setInterval(updateTime,1000);
+updateTime();
+
+renderCalendar(currentDate);
+</script>
+</body>
+</html>
+

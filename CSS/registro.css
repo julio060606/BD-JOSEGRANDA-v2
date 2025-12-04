@@ -1,0 +1,244 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #1D2B4A, #9D2222);
+  background-size: cover;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.container-form {
+  display: flex;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, .2);
+  height: 500px;
+  max-width: 900px;
+  transition: all 1s ease;
+  margin: 10px;
+  overflow: hidden;
+}
+
+/* PANEL IZQUIERDO O DERECHO */
+.information {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #1D2B4A; /* azul marino */
+  color: #fff;
+  padding: 20px;
+}
+
+.info-childs {
+  width: 100%;
+  padding: 0 30px;
+}
+
+.info-childs h2 {
+  font-size: 2.2rem;
+  color: #fff;
+}
+
+.info-childs p {
+  margin: 15px 0;
+  color: #e0e0e0;
+}
+
+.info-childs a {
+  display: inline-block;
+  background: linear-gradient(135deg, #eff0f1); /* Azul marino → Rojo oscuro */
+  color: #041436;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.info-childs a:hover {
+  background: linear-gradient(135deg,#570c0c);
+  color: #fff;
+}
+
+/* PANEL DEL FORMULARIO */
+.form-information {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  text-align: center;
+  background-color: #fff;
+  padding: 20px;
+}
+
+.form-information-childs {
+  width: 100%;
+  max-width: 400px;
+}
+
+.form-information-childs h2 {
+  color: #1D2B4A;
+  font-size: 2rem;
+}
+
+.form-information-childs p {
+  color: #555;
+}
+
+/* ICONOS SOCIALES */
+.icons {
+  margin: 15px 0;
+}
+
+.icons i {
+  border-radius: 50%;
+  padding: 15px;
+  cursor: pointer;
+  margin: 0 10px;
+  color: #1d2b4a;
+  border: solid thin #e4e6e9;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+}
+
+.icons i:hover {
+  background-color: #520505;
+  color: #fff;
+}
+
+/* FORMULARIO */
+.form {
+  margin: 30px 0 0 0;
+}
+
+.form label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  border-radius: 20px;
+  padding: 0 10px;
+  background-color: #F5F5F5;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+}
+
+.form label input {
+  width: 100%;
+  padding: 10px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  color: #333;
+}
+
+.form label i {
+  color: #9D2222;
+}
+
+.form input[type="submit"] {
+  background-color: #1D2B4A;
+  color: #fff;
+  border-radius: 20px;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: 600;
+  transition: background-color .3s ease;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
+}
+
+.form input[type="submit"]:hover {
+  background-color: #9D2222;
+}
+
+/* ALERTAS */
+.form > .alerta-error,
+.form > .alerta-exito {
+  display: none;
+}
+
+.form .alertaError {
+  display: block;
+  background-color: #F66060;
+  padding: .5rem 1rem;
+  margin-top: 10px;
+  font-weight: 500;
+  font-size: .8rem;
+  border-radius: 8px;
+  color: #fff;
+}
+
+.form .alertaExito {
+  display: block;
+  background-color: #0ca828;
+  padding: .5rem 1rem;
+  margin-top: 10px;
+  font-weight: 500;
+  font-size: .8rem;
+  border-radius: 8px;
+  color: #fff;
+}
+
+.form .error {
+  outline: solid 2px #9D2222;
+}
+
+/* BOTÓN VOLVER */
+.back-home {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 40px;
+  height: 40px;
+  background: #ffffff;       /* fondo blanco */
+  border: 2px solid #1b263b; /* borde azul marino */
+  border-radius: 50%;        /* circunferencia */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1b263b;            /* ícono azul marino */
+  font-size: 20px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.back-home:hover {
+  background: #1b263b;   /* fondo azul marino */
+  color: #ffffff;        /* ícono blanco */
+}
+
+/* RESPONSIVE */
+@media screen and (max-width:750px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width:580px) {
+  html {
+    font-size: 15px;
+  }
+
+  .container-form {
+    height: auto;
+    flex-direction: column;
+  }
+
+  .information,
+  .form-information {
+    width: 100%;
+    border-radius: 20px;
+    padding: 20px;
+  }
+}
+
+

@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servicios - Colegio Jose Granda</title>
+  <!--Icono de la pagina-->
+  <link rel="icon" href="imagenes/logocolegio.png" type="image/png">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Iconos Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="CSS/styleServicios.css">
+
+</head>
+
+<body class="bg-custom-dark">
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- BARRA SUPERIOR: horario y teléfono -->
+  <div class="bg-dark border-bottom border-accent py-2">
+    <div class="container d-flex justify-content-between small">
+      <div><i class="bi bi-clock me-1"></i> Lun - Vier: 07:00 - 21:00</div>
+      <div><i class="bi bi-telephone me-1"></i> +51 971 107 501 • Disponibles <strong class>24h</strong>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- NAVBAR -->
+  <header class="sticky-top w-100">
+    <nav class="navbar navbar-expand-md navbar-dark py-2">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#" aria-label="Inicio JoseGranda">
+          <img src="imagenes/logocolegio.png" alt="Logo JoseGranda" class="rounded-circle" width="64" height="64"
+            loading="lazy">
+          <span class="fw-bold">I.E.E Jóse Granda</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+          aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-center" id="mainNav">
+          <ul class="navbar-nav text-uppercase fw-semibold">
+            <li class="nav-item px-2"><a class="nav-link" href="index.html">INICIO</a></li>
+            <li class="nav-item px-2"><a class="nav-link active" href="servicios.html">Servicios</a></li>
+            <li class="nav-item px-2"><a class="nav-link" href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div class="d-flex align-items-center ms-auto gap-3">
+          <!-- Dropdown usuario -->
+          <div class="dropdown">
+            <a class="text-white text-decoration-none d-flex align-items-center dropdown-toggle" href="#"
+              id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true" role="button">
+              <i class="bi bi-person-circle fs-5" aria-hidden="true"></i>
+            </a>
+
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="userDropdown">
+              <li><a class="dropdown-item" href="login.html" data-action="login">Iniciar sesión</a></li>
+              <li><a class="dropdown-item" href="registro.html" data-action="register">Registrarse</a></li>
+              <li><a class="dropdown-item" href="/nuevacarpeta/avances/admin.php" data-action="admin">Admin</a></li>
+            </ul>
+          </div>
+
+
+
+        </div>
+    </nav>
+  </header>
+
+  <!-- Sección de video -->
+  <section class="video-section">
+    <video autoplay muted loop class="w-100">
+      <source src="talleres videos/talleres.mp4" type="video/mp4">
+    </video>
+    <div class="video-overlay">
+      <h2>EXPLORA NUESTROS TALLERES</h2>
+      <p>FUTBOL, NATACION, BAQUET, VOLEY Y MAS</p>
+      <a href="inscripcion.html" class="btn btn-light">INSCRIBETE AHORA</a>
+    </div>
+  </section>
+
+  <!-- Sección de tarjetas -->
+  <section class="talleres-section py-5">
+    <div class="container">
+      <div class="row g-4">
+
+        <!-- Taller Futbol -->
+        <div class="col-lg-4 col-md-6">
+          <div class="service-card text-center p-4">
+            <div class="service-icon mb-3">⚽</div>
+            <h3>Taller de Futbol</h3>
+            <p>Logra las habilidades, técnicas y tácticas necesarias para practicar el deporte.</p>
+            <a href="#" class="btn btn-primary">Inscribirse</a>
+          </div>
+        </div>
+
+        <!-- Taller Volley -->
+        <div class="col-lg-4 col-md-6">
+          <div class="service-card text-center p-4">
+            <div class="service-icon mb-3">🏐</div>
+            <h3>Taller de Volley</h3>
+            <p>Aprende trabajo en equipo y coordinación a través del volley.</p>
+            <a href="#" class="btn btn-primary">Inscribirse</a>
+          </div>
+        </div>
+
+        <!-- Taller Natación -->
+        <div class="col-lg-4 col-md-6">
+          <div class="service-card text-center p-4">
+            <div class="service-icon mb-3">💧</div>
+            <h3>Taller de Natación</h3>
+            <p>Aprende fundamentos de natación y técnicas de respiración y equilibrio.</p>
+            <a href="#" class="btn btn-primary">Inscribirse</a>
+          </div>
+        </div>
+
+        <!-- Taller Basquet -->
+        <div class="col-lg-4 col-md-6">
+          <div class="service-card text-center p-4">
+            <div class="service-icon mb-3">🏀</div>
+            <h3>Taller de Basquet</h3>
+            <p>Aprende técnicas básicas del juego y trabajo en equipo.</p>
+            <a href="#" class="btn btn-primary">Inscribirse</a>
+          </div>
+        </div>
+
+        <!-- Taller Refuerzo -->
+        <div class="col-lg-4 col-md-6">
+          <div class="service-card text-center p-4">
+            <div class="service-icon mb-3">📚</div>
+            <h3>Taller de Refuerzo</h3>
+            <p>Refuerza tus conocimientos en matemáticas, comunicación y más.</p>
+            <a href="#" class="btn btn-primary">Inscribirse</a>
+          </div>
+        </div>
+
+        <!-- Reserva de recursos -->
+        <div class="col-lg-4 col-md-6">
+          <div class="service-card text-center p-4">
+            <div class="service-icon mb-3">📅</div>
+            <h3>Reserva de recursos</h3>
+            <p>Reserva los espacios abiertos del colegio a tu interes.</p>
+            <a href="#" class="btn btn-primary">Inscribirse</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- PROCESO DE INSCRIPCIÓN -->
+  <section class="inscripcion-section">
+    <div class="container">
+      <h2 class="section-title">Proceso de Inscripción</h2>
+
+      <div class="row justify-content-center g-4">
+        <!--Paso 1-->
+        <div class="col-md-4">
+          <div class="process-step wow fadeInUp" data-wow-delay="0.2s">
+            <div class="step-number">1</div>
+            <h4>Información y Elección</h4>
+            <p>Conoce nuestros talleres y servicios, y elige el que mejor se adapte a tus intereses y horarios.</p>
+          </div>
+        </div>
+        <!--Paso 1-->
+        <div class="col-md-4">
+          <div class="process-step wow fadeInUp" data-wow-delay="0.4s">
+            <div class="step-number">2</div>
+            <h4>Inscripción Formal</h4>
+            <p>Completa el formulario de inscripción y entrega la documentación requerida.</p>
+          </div>
+        </div>
+        <!--Paso 1-->
+        <div class="col-md-4">
+          <div class="process-step wow fadeInUp" data-wow-delay="0.6s">
+            <div class="step-number">3</div>
+            <h4>Participación y Seguimiento</h4>
+            <p>Asiste a las sesiones y ciñete a las normas y reglamento de la institución.y</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Paso 1
+      <div class="col-md-4 process-step wow fadeInUp" data-wow-delay="0.2s">
+        <div class="step-number">1</div>
+        <h4>Información y Elección</h4>
+        <p>Conoce nuestros talleres y servicios, y elige el que mejor se adapte a tus intereses y horarios.</p>
+      </div>
+
+      Paso 2
+      <div class="col-md-4 process-step wow fadeInUp" data-wow-delay="0.4s">
+        <div class="step-number">2</div>
+        <h4>Inscripción Formal</h4>
+        <p>Completa el formulario de inscripción y entrega la documentación requerida.</p>
+      </div>
+
+      Paso 3
+      <div class="col-md-4 process-step wow fadeInUp" data-wow-delay="0.6s">
+        <div class="step-number">3</div>
+        <h4>Participación y Seguimiento</h4>
+        <p>Asiste a las sesiones y ciñete a las normas y reglamento de la institución.</p>
+      </div>
+    </div> -->
+
+      <div class="text-center mt-5">
+        <a href="inscripcion.html" class="btn btn-inscribirse wow fadeIn" data-wow-delay="0.8s">Inscribirse
+          Ahora</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <!-- Sección de testimonios -->
+  <section class="testimonials-section py-5">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-down">Lo que dicen nuestros estudiantes</h2>
+
+      <div class="row g-4 mt-4">
+        <!-- Tarjeta 1 -->
+        <div class="col-lg-3 col-md-6" data-aos="fade-up">
+          <div class="testimonial-card">
+            <div class="d-flex align-items-center mb-4">
+              <img src="imagenes/comentaio 1.jpg" alt="María López" class="testimonial-avatar me-3">
+              <div>
+                <h5 class="testimonial-name">María López</h5>
+                <small class="testimonial-role">Participante del Taller de Natación</small>
+              </div>
+            </div>
+            <p class="testimonial-text">"El taller de natación fue una experiencia increíble. Aprendí diversas técnicas
+              y pude divertirme como nunca imaginé."</p>
+            <div class="testimonial-stars">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-half"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjeta 2 -->
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="testimonial-card">
+            <div class="d-flex align-items-center mb-4">
+              <img src="imagenes/comentarista 2.jpg" alt="Carlos Mendoza" class="testimonial-avatar me-3">
+              <div>
+                <h5 class="testimonial-name">Carlos Mendoza</h5>
+                <small class="testimonial-role">Participante del Taller de Volley</small>
+              </div>
+            </div>
+            <p class="testimonial-text">"El taller de Volley me permitió aprender habilidades prácticas que puedo usar
+              en mis partidos. Los instructores son muy dedicados."</p>
+            <div class="testimonial-stars">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjeta 3 -->
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="testimonial-card">
+            <div class="d-flex align-items-center mb-4">
+              <img src="imagenes/comentarista 3.jpg" alt="Ana Torres" class="testimonial-avatar me-3">
+              <div>
+                <h5 class="testimonial-name">Francisco Lopez</h5>
+                <small class="testimonial-role">Participante del Taller de Basquet</small>
+              </div>
+            </div>
+            <p class="testimonial-text">"Participar en este taller me ha enseñado valores importantes y me ha permitido
+              aprender sobre la competencia sana."</p>
+            <div class="testimonial-stars">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjeta 4 -->
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="testimonial-card">
+            <div class="d-flex align-items-center mb-4">
+              <img src="imagenes/comentarista 4.jpg" alt="Luis Ramírez" class="testimonial-avatar me-3">
+              <div>
+                <h5 class="testimonial-name">Luis Ramírez</h5>
+                <small class="testimonial-role">Participante del Taller de Futbol</small>
+              </div>
+            </div>
+            <p class="testimonial-text">"Los talleres me ayudaron a mejorar mis habilidades y aprender nuevas técnicas.
+              La experiencia fue muy completa y divertida."</p>
+            <div class="testimonial-stars">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-half"></i>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- PREGUNTAS FRECUENTES -->
+  <section class="faq-section py-5">
+    <div class="container">
+      <h2 class="section-title text-center mb-5">Preguntas Frecuentes</h2>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="accordion" id="faqAccordion">
+
+            <!-- Pregunta 1 -->
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#faq1" aria-expanded="false" aria-controls="faq1">
+                  ¿Qué talleres ofrecen?
+                </button>
+              </h3>
+              <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Ofrecemos diversos talleres deportivos que contribuyen a la formación de los menores de la comunidad.
+                </div>
+              </div>
+            </div>
+
+            <!-- Pregunta 2 -->
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+                  ¿Cómo puedo reservar los recursos del Colegio?
+                </button>
+              </h3>
+              <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Puede inscribirse en la oficina de administración o a través de nuestros formularios en línea. Para
+                  algunos recursos debe cumplir requisitos específicos.
+                </div>
+              </div>
+            </div>
+
+            <!-- Pregunta 3 -->
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+                  ¿Qué servicios de apoyo académico ofrecen?
+                </button>
+              </h3>
+              <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Ofrecemos programas de nivelación y espacios de estudio.
+                </div>
+              </div>
+            </div>
+
+            <!-- Pregunta 4 -->
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
+                  ¿Hay algún costo adicional por los talleres?
+                </button>
+              </h3>
+              <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Sí, para más consultas y específicamente por cada taller contáctanos.
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- NEWSLETTER -->
+  <section class="newsletter-section py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6 text-center">
+          <h3 class="newsletter-title mb-3" data-aos="fade-up">¿Necesitas más información?</h3>
+          <p class="newsletter-text mb-4" data-aos="fade-up" data-aos-delay="100">
+            Contáctanos directamente y te ayudaremos a elegir el servicio perfecto para ti.
+          </p>
+          <div class="d-flex gap-3 justify-content-center flex-wrap" data-aos="fade-up" data-aos-delay="200">
+            <a href="contacto.html" class="btn btn-contact btn-lg">Formulario de contacto</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- BOTONES FLOATING -->
+  <a href="https://wa.me/51971107501" class="btn btn-success rounded-circle shadow floating-btn btn-whatsapp"
+    aria-label="WhatsApp">
+    <i class="bi bi-whatsapp fs-4"></i>
+  </a>
+
+  <a href="inscripcion.html" class="btn btn-warning rounded-pill shadow floating-btn btn-order"
+    aria-label="Inscribirse ahora">
+    <i class="bi bi-pencil-fill me-2"></i> Inscribirse
+  </a>
+
+  <!-- FOOTER -->
+  <footer class="footer-section py-5 mt-5">
+    <div class="container">
+      <div class="row gy-5">
+        <!-- Información del Colegio -->
+        <div class="col-12 col-md-4">
+          <h3 class="footer-title mb-4">I.E.E. Jose Granda</h3>
+          <p class="footer-text mb-0">Institución Educativa Emblemática</p>
+          <p class="footer-text mt-3"><i class="bi bi-geo-alt me-2"></i>Av. Universitaria, Óvalo s/n, San Martín de
+            Porres 15101</p>
+        </div>
+
+        <!-- Enlaces Rápidos -->
+        <div class="col-12 col-md-4">
+          <h6 class="footer-subtitle mb-4">Enlaces rápidos</h6>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-3"><a href="index.html"><i class="bi bi-caret-right-fill me-2"></i>Inicio</a></li>
+            <li class="mb-3"><a href="#"><i class="bi bi-caret-right-fill me-2"></i>Admisiones</a></li>
+            <li class="mb-3"><a href="#"><i class="bi bi-caret-right-fill me-2"></i>Servicios</a></li>
+            <li class="mb-3"><a href="contacto.html"><i class="bi bi-caret-right-fill me-2"></i>Contacto</a></li>
+          </ul>
+        </div>
+
+        <!-- Redes y Contacto -->
+        <div class="col-12 col-md-4">
+          <h6 class="footer-subtitle mb-4">Síguenos</h6>
+          <div class="d-flex gap-3 mb-4">
+            <a href="https://www.facebook.com/ieejosegranda/?locale=es_LA" class="social-icon facebook" target="_blank"
+              rel="noopener">
+              <i class="bi bi-facebook" aria-hidden="true"></i>
+            </a>
+          </div>
+
+          <h6 class="footer-subtitle mb-3">Contacto</h6>
+          <p class="footer-text mb-2"><i class="bi bi-telephone me-2"></i>+51 971 107 501</p>
+          <p class="footer-text mb-0"><i class="bi bi-clock me-2"></i>Lun-Vier: 07:00 - 21:00</p>
+        </div>
+      </div>
+
+      <!-- Derechos -->
+      <div class="footer-bottom text-center mt-5 pt-3">
+        © <span id="year"></span> Colegio Jose Granda. Todos los derechos reservados.
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

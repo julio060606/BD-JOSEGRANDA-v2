@@ -1,0 +1,913 @@
+/* ===================== FUENTE GENERAL ===================== */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    color: #000;
+    overflow-x: hidden;
+}
+
+/* ===================== HEADER ===================== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, #0d3380 0%, #3366cc 100%);
+    color: #fff;
+    z-index: 1001;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    height: 70px;
+}
+
+.header .container-fluid {
+    padding: 0 20px;
+}
+
+.header-logo {
+    width: 40px;
+    height: 40px;
+}
+
+.header-profile-img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    object-fit: cover;
+}
+
+.sidebar-toggle {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.sidebar-toggle:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+/* ===================== SIDEBAR ===================== */
+.sidebar {
+    position: fixed;
+    top: 70px;
+    left: -240px;
+    width: 240px;
+    height: calc(100% - 70px);
+    background: linear-gradient(to bottom, 
+                                #b30000 0%,       
+                                #b30000 40%,      
+                                #ff4d4d 50%,      
+                                #3366cc 60%,      
+                                #0d3380 100%);
+    color: #fff;
+    padding-top: 20px;
+    z-index: 1000;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+    transition: left 0.3s ease;
+    overflow-y: auto;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar .brand-logo {
+    width: 80px;
+    height: auto;
+}
+
+.sidebar h5 {
+    color: #fff;
+    margin-top: 10px;
+}
+
+.sidebar .nav-link {
+    color: #fff;
+    padding: 10px 20px;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+    background-color: rgba(255,255,255,0.2);
+    color: #fff;
+    font-weight: 600;
+}
+
+/* ===================== NAV LINKS CON ESPACIO SUAVE ===================== */
+.sidebar ul.nav {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    justify-content: flex-start;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+.sidebar ul.nav li.nav-item {
+    margin-bottom: 15px;
+}
+
+.sidebar .nav-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.sidebar .nav-link i {
+    margin-right: 10px;
+}
+
+/* ===================== OVERLAY ===================== */
+.sidebar-overlay {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* ===================== CONTENIDO PRINCIPAL ===================== */
+.content {
+    margin-top: 70px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    min-height: calc(100vh - 70px);
+}
+
+.content.sidebar-active {
+    margin-left: 240px;
+}
+
+/* ===================== BIENVENIDA ===================== */
+.bienvenida {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.bienvenida .logo-small {
+    width: 60px;
+    height: 60px;
+}
+
+.bienvenida span {
+    font-size: 2rem;
+}
+
+.bienvenida h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #0d3380;
+}
+
+/* ===================== CARDS GENERALES ===================== */
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    margin-bottom: 1.5rem;
+}
+
+.card:hover {
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.card-header {
+    background: linear-gradient(135deg, #0d3380 0%, #3366cc 100%);
+    color: white;
+    border-radius: 12px 12px 0 0 !important;
+    border: none;
+    padding: 1rem 1.25rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.card-header.bg-danger {
+    background: linear-gradient(135deg, #b30000 0%, #ff4d4d 100%) !important;
+}
+
+.card-header.bg-primary {
+    background: linear-gradient(135deg, #0d3380 0%, #3366cc 100%) !important;
+}
+
+.card-header.bg-success {
+    background: linear-gradient(135deg, #198754 0%, #20c997 100%) !important;
+}
+
+.card-header.bg-info {
+    background: linear-gradient(135deg, #0dcaf0 0%, #6edff6 100%) !important;
+}
+
+.card-header.bg-warning {
+    background: linear-gradient(135deg, #ffc107 0%, #ffda6a 100%) !important;
+    color: #000 !important;
+}
+
+/* ===================== BOTONES ===================== */
+.btn {
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: none;
+    padding: 0.5rem 1rem;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #0d3380 0%, #3366cc 100%);
+    border-color: #0d3380;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #002060 0%, #1a4db3 100%);
+    border-color: #002060;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(13, 51, 128, 0.3);
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #198754 0%, #20c997 100%);
+    border-color: #198754;
+    color: #fff;
+}
+
+.btn-success:hover {
+    background: linear-gradient(135deg, #146c43 0%, #1aa179 100%);
+    border-color: #146c43;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(25, 135, 84, 0.3);
+}
+
+.btn-warning {
+    background: linear-gradient(135deg, #ff9900 0%, #ffc107 100%);
+    border-color: #ff9900;
+    color: #fff;
+    font-weight: 500;
+}
+
+.btn-warning:hover {
+    background: linear-gradient(135deg, #e68a00 0%, #e0a800 100%);
+    border-color: #e68a00;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 153, 0, 0.3);
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, #6c757d 0%, #adb5bd 100%);
+    border-color: #6c757d;
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(135deg, #5a6268 0%, #8b96a0 100%);
+    border-color: #5a6268;
+    transform: translateY(-2px);
+}
+
+.btn-outline-primary {
+    border: 2px solid #0d3380;
+    color: #0d3380;
+    background: transparent;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary.active {
+    background: linear-gradient(135deg, #0d3380 0%, #3366cc 100%);
+    border-color: #0d3380;
+    color: white;
+}
+
+.btn-outline-success {
+    border: 2px solid #198754;
+    color: #198754;
+    background: transparent;
+}
+
+.btn-outline-success:hover {
+    background: linear-gradient(135deg, #198754 0%, #20c997 100%);
+    border-color: #198754;
+    color: white;
+}
+
+/* ===================== FORMULARIOS ===================== */
+.form-control {
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+    padding: 0.75rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #0d3380;
+    box-shadow: 0 0 0 0.2rem rgba(13, 51, 128, 0.25);
+}
+
+.form-control:disabled {
+    background-color: #f8f9fa;
+    opacity: 0.7;
+}
+
+.form-label {
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 0.5rem;
+}
+
+.form-select {
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    border: 1px solid #dee2e6;
+    transition: all 0.3s ease;
+}
+
+.form-select:focus {
+    border-color: #0d3380;
+    box-shadow: 0 0 0 0.2rem rgba(13, 51, 128, 0.25);
+}
+
+/* ===================== LISTAS ===================== */
+.card ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.card ul li {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* ===================== MENSAJES ===================== */
+.text-success {
+    color: #198754 !important;
+    font-weight: 500;
+}
+
+.text-danger {
+    color: #dc3545 !important;
+    font-weight: 500;
+}
+
+.text-muted {
+    color: #6c757d !important;
+    font-size: 0.875rem;
+}
+
+/* ===================== BOTÓN WHATSAPP ===================== */
+.btn-wsp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    z-index: 1000;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.btn-wsp:hover {
+    transform: scale(1.1);
+}
+
+/* ===================== ESTILOS ESPECÍFICOS PARA HORARIO ===================== */
+.clase-item {
+    padding: 0.75rem 0.5rem;
+    border-radius: 8px;
+    margin: 3px 2px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.1);
+    min-height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.clase-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 1;
+    position: relative;
+}
+
+.clase-item strong {
+    display: block;
+    font-size: 0.85rem;
+    margin-bottom: 0.25rem;
+    line-height: 1.2;
+}
+
+.clase-item small {
+    font-size: 0.7rem;
+    opacity: 0.9;
+    line-height: 1.1;
+}
+
+/* Colores para diferentes grados */
+.bg-purple {
+    background: linear-gradient(135deg, #6f42c1 0%, #8b5cf6 100%) !important;
+}
+
+.bg-teal {
+    background: linear-gradient(135deg, #20c997 0%, #63e6be 100%) !important;
+}
+
+.bg-dark {
+    background: linear-gradient(135deg, #343a40 0%, #495057 100%) !important;
+}
+
+/* Hora actual resaltada */
+.hora-actual {
+    background-color: rgba(255, 193, 7, 0.2) !important;
+    position: relative;
+}
+
+.hora-actual::before {
+    content: "⏰ Ahora";
+    position: absolute;
+    top: -8px;
+    right: 10px;
+    background: #ffc107;
+    color: #000;
+    font-size: 0.6rem;
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.hora-actual td {
+    background-color: rgba(255, 193, 7, 0.1) !important;
+    font-weight: bold;
+}
+
+/* Leyenda de colores */
+.color-box {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: 2px solid rgba(0,0,0,0.1);
+    margin-right: 0.5rem;
+}
+
+/* Mejoras para la tabla del horario */
+.horario-table {
+    border-collapse: separate;
+    border-spacing: 2px;
+}
+
+.horario-table th,
+.horario-table td {
+    vertical-align: middle;
+    padding: 0.5rem;
+    border: 1px solid #dee2e6;
+}
+
+.horario-table thead th {
+    background: linear-gradient(135deg, #0d3380 0%, #3366cc 100%);
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    border: none;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.horario-table tbody td:first-child {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    font-weight: 600;
+    color: #495057;
+    text-align: center;
+    width: 120px;
+}
+
+/* Badges */
+.badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.35em 0.65em;
+    border-radius: 6px;
+}
+
+.bg-light {
+    background-color: #f8f9fa !important;
+    color: #0d3380 !important;
+}
+
+/* Grupos de botones */
+.btn-group .btn {
+    border-radius: 0;
+}
+
+.btn-group .btn:first-child {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.btn-group .btn:last-child {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+/* Alertas */
+.alert {
+    border: none;
+    border-radius: 8px;
+    border-left: 4px solid;
+}
+
+.alert-info {
+    background-color: #e7f3ff;
+    border-left-color: #0d3380;
+    color: #0d3380;
+}
+
+/* Resumen de horas */
+.border-end {
+    border-right: 2px solid #dee2e6 !important;
+}
+
+.text-primary {
+    color: #0d3380 !important;
+}
+
+/* ===================== TARJETAS DE RESUMEN ===================== */
+.resumen-card {
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    height: 100%;
+    border: none;
+}
+
+.resumen-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.resumen-card .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.resumen-card .icono {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* ===================== MODALES ===================== */
+.modal-content {
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.modal-header {
+    background: linear-gradient(135deg, #0d3380 0%, #3366cc 100%);
+    color: white;
+    border-radius: 12px 12px 0 0;
+    border: none;
+}
+
+.modal-title {
+    font-weight: 600;
+}
+
+/* ===================== RESPONSIVO ===================== */
+@media (min-width: 992px) {
+    .sidebar {
+        left: 0;
+    }
+    
+    .content {
+        margin-left: 240px;
+    }
+    
+    .sidebar-toggle {
+        display: none;
+    }
+    
+    .sidebar-overlay {
+        display: none;
+    }
+}
+
+@media (max-width: 991px) {
+    .content {
+        margin-left: 0;
+    }
+    
+    .bienvenida {
+        flex-direction: column;
+    }
+    
+    .content.sidebar-active {
+        margin-left: 0;
+    }
+    
+    .btn {
+        font-size: 0.875rem;
+        padding: 0.4rem 0.8rem;
+    }
+    
+    /* Horario responsive */
+    .horario-table {
+        font-size: 0.875rem;
+    }
+    
+    .clase-item {
+        padding: 0.5rem 0.25rem;
+        min-height: 60px;
+    }
+    
+    .clase-item strong {
+        font-size: 0.8rem;
+    }
+    
+    .clase-item small {
+        font-size: 0.65rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .content {
+        padding: 15px;
+    }
+    
+    .bienvenida h2 {
+        font-size: 1.5rem;
+    }
+    
+    .card-header {
+        font-size: 1rem;
+        padding: 0.75rem 1rem;
+    }
+    
+    /* Horario móvil */
+    .table-responsive {
+        font-size: 0.8rem;
+    }
+    
+    .horario-table th,
+    .horario-table td {
+        padding: 0.25rem;
+    }
+    
+    .clase-item {
+        min-height: 50px;
+        padding: 0.25rem;
+    }
+    
+    .clase-item strong {
+        font-size: 0.7rem;
+    }
+    
+    .clase-item small {
+        font-size: 0.6rem;
+    }
+    
+    .hora-actual::before {
+        font-size: 0.5rem;
+        padding: 1px 4px;
+        top: -6px;
+        right: 5px;
+    }
+    
+    .list-group-item {
+        padding: 0.75rem;
+    }
+    
+    .btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .header .container-fluid {
+        padding: 0 15px;
+    }
+    
+    .bienvenida h2 {
+        font-size: 1.3rem;
+    }
+    
+    .card-body {
+        padding: 1rem;
+    }
+    
+    /* Horario muy pequeño */
+    .table-responsive {
+        font-size: 0.75rem;
+    }
+    
+    .horario-table th,
+    .horario-table td {
+        padding: 0.15rem;
+    }
+    
+    .clase-item {
+        min-height: 45px;
+        padding: 0.15rem;
+    }
+    
+    .clase-item strong {
+        font-size: 0.65rem;
+    }
+    
+    .clase-item small {
+        font-size: 0.55rem;
+    }
+    
+    .color-box {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+/* ===================== ESTILOS ESPECÍFICOS PARA HORARIO PROFESOR ===================== */
+.horario-info-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-left: 4px solid #0d3380;
+}
+
+.horario-resumen-section {
+    background: linear-gradient(135deg, #fff5f5 0%, #ffe6e6 100%);
+    border-left: 4px solid #b30000;
+}
+
+/* Mejoras visuales para el texto */
+.card h6 {
+    color: #0d3380;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.card small {
+    color: #6c757d;
+}
+
+/* Efectos de hover mejorados */
+.list-group-item:hover .badge {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+/* Iconos decorativos */
+.bi-clock::before {
+    color: #fff;
+}
+
+.bi-graph-up::before {
+    color: #fff;
+}
+
+.bi-info-circle::before {
+    color: #000;
+}
+
+.bi-calendar-week::before {
+    color: #0d3380;
+}
+
+.bi-printer::before {
+    color: #198754;
+}
+
+/* Sombras y profundidad */
+.card-shadow {
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.card-shadow:hover {
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1), 0 4px 6px rgba(0,0,0,0.05);
+}
+
+/* Espaciado y márgenes */
+.mb-4 {
+    margin-bottom: 1.5rem !important;
+}
+
+.mt-3 {
+    margin-top: 1rem !important;
+}
+
+/* Text utilities */
+.fw-bold {
+    font-weight: 600 !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+/* Flex utilities */
+.d-flex {
+    display: flex !important;
+}
+
+.justify-content-between {
+    justify-content: space-between !important;
+}
+
+.align-items-center {
+    align-items: center !important;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilos para impresión */
+@media print {
+    .sidebar,
+    .header,
+    .btn-wsp,
+    .btn-group,
+    .form-control,
+    .form-select,
+    .form-label,
+    .card:not(.horario-card) {
+        display: none !important;
+    }
+    
+    .content {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    .card {
+        box-shadow: none !important;
+        border: 1px solid #dee2e6 !important;
+        page-break-inside: avoid;
+    }
+    
+    .clase-item {
+        break-inside: avoid;
+        box-shadow: none !important;
+    }
+    
+    .horario-table {
+        page-break-inside: avoid;
+    }
+    
+    .table-responsive {
+        overflow: visible !important;
+    }
+}
+
+/* Asegurar que todo el contenido sea visible desde el inicio */
+.content > * {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+/* Animaciones suaves para transiciones */
+.clase-item, .card, .btn {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Mejoras de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+    .clase-item, .card, .btn {
+        transition: none;
+    }
+}

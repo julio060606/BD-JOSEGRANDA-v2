@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>I.E.E. José Granda — Cursos</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Iconos -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Fuente -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- CSS Personal -->
+  <link rel="stylesheet" href="cursos.css">
+</head>
+<body>
+
+  <!-- SIDEBAR LATERAL -->
+  <nav class="sidebar">
+    <div class="brand text-center py-3">
+      <img src="Imagenes/logocolegio.png" alt="Insignia" class="brand-logo mb-2">
+      <h5 class="fw-bold text-white">I.E.E. José Granda</h5>
+    </div>
+    <ul class="nav flex-column mt-3">
+      <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door"></i> Inicio</a></li>
+      <li class="nav-item"><a class="nav-link" href="perfil.html"><i class="bi bi-person"></i> Perfil</a></li>
+      <li class="nav-item"><a class="nav-link active" href="#cursos"><i class="bi bi-book"></i> Cursos</a></li>
+      <li class="nav-item"><a class="nav-link" href="calendario.html"><i class="bi bi-calendar"></i> Calendario</a></li>
+      <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-box-arrow-right"></i> Salir</a></li>
+    </ul>
+  </nav>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="content">
+    <div class="container py-4">
+
+      <!-- BIENVENIDA -->
+      <div class="bienvenida d-flex flex-column flex-md-row align-items-center justify-content-center text-center gap-3 mb-4">
+        <img src="Imagenes/logocolegio.png" alt="Insignia" class="logo-small">
+        <div class="d-flex align-items-center gap-2 justify-content-center">
+          <span class="fs-2">📚</span>
+          <h2 class="fw-bold mb-0">Cursos Matriculados</h2>
+        </div>
+      </div>
+
+      <!-- CARDS DE CURSOS -->
+      <div class="row g-4">
+
+        <!-- Curso Card Template -->
+        <!-- Matemáticas -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card curso-card p-3 h-100 d-flex flex-column justify-content-between">
+            <div>
+              <h5 class="card-title fw-bold">Matemáticas</h5>
+              <p><strong>Profesor:</strong> Juan Pérez</p>
+              <p><strong>Horario:</strong> Lunes y Miércoles 8:00 - 9:30</p>
+              <div class="progress mb-2">
+                <div class="progress-bar bg-primary" style="width: 60%">60%</div>
+              </div>
+            </div>
+            <button class="btn btn-primary mt-2 w-100" data-bs-toggle="modal" data-bs-target="#modalMatematicas">Ver Curso</button>
+          </div>
+        </div>
+
+        <!-- Lengua y Literatura -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card curso-card p-3 h-100 d-flex flex-column justify-content-between">
+            <div>
+              <h5 class="card-title fw-bold">Lengua y Literatura</h5>
+              <p><strong>Profesor:</strong> María López</p>
+              <p><strong>Horario:</strong> Martes y Jueves 10:00 - 11:30</p>
+              <div class="progress mb-2">
+                <div class="progress-bar bg-success" style="width: 40%">40%</div>
+              </div>
+            </div>
+            <button class="btn btn-primary mt-2 w-100" data-bs-toggle="modal" data-bs-target="#modalLengua">Ver Curso</button>
+          </div>
+        </div>
+
+        <!-- Historia -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card curso-card p-3 h-100 d-flex flex-column justify-content-between">
+            <div>
+              <h5 class="card-title fw-bold">Historia</h5>
+              <p><strong>Profesor:</strong> Ana Torres</p>
+              <p><strong>Horario:</strong> Viernes 9:00 - 11:00</p>
+              <div class="progress mb-2">
+                <div class="progress-bar bg-warning" style="width: 80%">80%</div>
+              </div>
+            </div>
+            <button class="btn btn-primary mt-2 w-100" data-bs-toggle="modal" data-bs-target="#modalHistoria">Ver Curso</button>
+          </div>
+        </div>
+
+        <!-- Física -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card curso-card p-3 h-100 d-flex flex-column justify-content-between">
+            <div>
+              <h5 class="card-title fw-bold">Física</h5>
+              <p><strong>Profesor:</strong> Carlos Ruiz</p>
+              <p><strong>Horario:</strong> Lunes y Miércoles 11:30 - 13:00</p>
+              <div class="progress mb-2">
+                <div class="progress-bar bg-danger" style="width: 30%">30%</div>
+              </div>
+            </div>
+            <button class="btn btn-primary mt-2 w-100" data-bs-toggle="modal" data-bs-target="#modalFisica">Ver Curso</button>
+          </div>
+        </div>
+
+        <!-- Química -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card curso-card p-3 h-100 d-flex flex-column justify-content-between">
+            <div>
+              <h5 class="card-title fw-bold">Química</h5>
+              <p><strong>Profesor:</strong> Rosa Méndez</p>
+              <p><strong>Horario:</strong> Martes y Jueves 13:00 - 14:30</p>
+              <div class="progress mb-2">
+                <div class="progress-bar bg-info" style="width: 50%">50%</div>
+              </div>
+            </div>
+            <button class="btn btn-primary mt-2 w-100" data-bs-toggle="modal" data-bs-target="#modalQuimica">Ver Curso</button>
+          </div>
+        </div>
+
+        <!-- Biología -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card curso-card p-3 h-100 d-flex flex-column justify-content-between">
+            <div>
+              <h5 class="card-title fw-bold">Biología</h5>
+              <p><strong>Profesor:</strong> Laura Ramos</p>
+              <p><strong>Horario:</strong> Miércoles y Viernes 14:00 - 15:30</p>
+              <div class="progress mb-2">
+                <div class="progress-bar bg-success" style="width: 70%">70%</div>
+              </div>
+            </div>
+            <button class="btn btn-primary mt-2 w-100" data-bs-toggle="modal" data-bs-target="#modalBiologia">Ver Curso</button>
+          </div>
+        </div>
+
+        <!-- Inglés -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card curso-card p-3 h-100 d-flex flex-column justify-content-between">
+            <div>
+              <h5 class="card-title fw-bold">Inglés</h5>
+              <p><strong>Profesor:</strong> David Smith</p>
+              <p><strong>Horario:</strong> Lunes y Miércoles 15:30 - 17:00</p>
+              <div class="progress mb-2">
+                <div class="progress-bar bg-primary" style="width: 55%">55%</div>
+              </div>
+            </div>
+            <button class="btn btn-primary mt-2 w-100" data-bs-toggle="modal" data-bs-target="#modalIngles">Ver Curso</button>
+          </div>
+        </div>
+
+        <!-- Educación Física -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card curso-card p-3 h-100 d-flex flex-column justify-content-between">
+            <div>
+              <h5 class="card-title fw-bold">Educación Física</h5>
+              <p><strong>Profesor:</strong> Pedro Martínez</p>
+              <p><strong>Horario:</strong> Martes y Jueves 15:30 - 17:00</p>
+              <div class="progress mb-2">
+                <div class="progress-bar bg-warning" style="width: 90%">90%</div>
+              </div>
+            </div>
+            <button class="btn btn-primary mt-2 w-100" data-bs-toggle="modal" data-bs-target="#modalEducacionFisica">Ver Curso</button>
+          </div>
+        </div>
+
+        <!-- Arte -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card curso-card p-3 h-100 d-flex flex-column justify-content-between">
+            <div>
+              <h5 class="card-title fw-bold">Arte</h5>
+              <p><strong>Profesor:</strong> Carmen Diaz</p>
+              <p><strong>Horario:</strong> Viernes 15:00 - 16:30</p>
+              <div class="progress mb-2">
+                <div class="progress-bar bg-info" style="width: 50%">50%</div>
+              </div>
+            </div>
+            <button class="btn btn-primary mt-2 w-100" data-bs-toggle="modal" data-bs-target="#modalArte">Ver Curso</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- BOTÓN WHATSAPP FLOTANTE -->
+      <a href="https://wa.me/51999999999" target="_blank" class="btn-wsp" aria-label="WhatsApp" title="Contactar por WhatsApp">
+        <i class="bi bi-whatsapp"></i>
+      </a>
+
+    </div>
+  </main>
+
+  <!-- MODALES DE CURSOS (ejemplo completo para Matemáticas, el resto igual) -->
+  <div class="modal fade" id="modalMatematicas" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Matemáticas</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Profesor:</strong> Juan Pérez</p>
+          <p><strong>Horario:</strong> Lunes y Miércoles 8:00 - 9:30</p>
+          <p><strong>Temario:</strong></p>
+          <ul>
+            <li>Álgebra</li>
+            <li>Geometría</li>
+            <li>Trigonometría</li>
+          </ul>
+          <p><strong>Tareas pendientes:</strong> 2</p>
+          <div class="progress mb-2">
+            <div class="progress-bar bg-primary" style="width: 60%">60% completado</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODALES RESTANTES: repetir con datos apropiados -->
+  <!-- Lengua -->
+  <div class="modal fade" id="modalLengua" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Lengua y Literatura</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Profesor:</strong> María López</p>
+          <p><strong>Horario:</strong> Martes y Jueves 10:00 - 11:30</p>
+          <p><strong>Temario:</strong></p>
+          <ul>
+            <li>Gramática</li>
+            <li>Literatura Clásica</li>
+            <li>Redacción y Comprensión</li>
+          </ul>
+          <p><strong>Tareas pendientes:</strong> 1</p>
+          <div class="progress mb-2">
+            <div class="progress-bar bg-success" style="width: 40%">40% completado</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Historia -->
+  <div class="modal fade" id="modalHistoria" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Historia</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Profesor:</strong> Ana Torres</p>
+          <p><strong>Horario:</strong> Viernes 9:00 - 11:00</p>
+          <p><strong>Temario:</strong></p>
+          <ul>
+            <li>Historia Universal</li>
+            <li>Historia del Perú</li>
+            <li>Eventos Contemporáneos</li>
+          </ul>
+          <p><strong>Tareas pendientes:</strong> 0</p>
+          <div class="progress mb-2">
+            <div class="progress-bar bg-warning" style="width: 80%">80% completado</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Física -->
+  <div class="modal fade" id="modalFisica" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Física</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Profesor:</strong> Carlos Ruiz</p>
+          <p><strong>Horario:</strong> Lunes y Miércoles 11:30 - 13:00</p>
+          <p><strong>Temario:</strong></p>
+          <ul>
+            <li>Mecánica</li>
+            <li>Termodinámica</li>
+            <li>Electromagnetismo</li>
+          </ul>
+          <p><strong>Tareas pendientes:</strong> 3</p>
+          <div class="progress mb-2">
+            <div class="progress-bar bg-danger" style="width: 30%">30% completado</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Química -->
+  <div class="modal fade" id="modalQuimica" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Química</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Profesor:</strong> Rosa Méndez</p>
+          <p><strong>Horario:</strong> Martes y Jueves 13:00 - 14:30</p>
+          <p><strong>Temario:</strong></p>
+          <ul>
+            <li>Química General</li>
+            <li>Química Orgánica</li>
+            <li>Laboratorio</li>
+          </ul>
+          <p><strong>Tareas pendientes:</strong> 2</p>
+          <div class="progress mb-2">
+            <div class="progress-bar bg-info" style="width: 50%">50% completado</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Biología -->
+  <div class="modal fade" id="modalBiologia" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Biología</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Profesor:</strong> Laura Ramos</p>
+          <p><strong>Horario:</strong> Miércoles y Viernes 14:00 - 15:30</p>
+          <p><strong>Temario:</strong></p>
+          <ul>
+            <li>Biología Celular</li>
+            <li>Genética</li>
+            <li>Ecología</li>
+          </ul>
+          <p><strong>Tareas pendientes:</strong> 1</p>
+          <div class="progress mb-2">
+            <div class="progress-bar bg-success" style="width: 70%">70% completado</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Inglés -->
+  <div class="modal fade" id="modalIngles" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Inglés</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Profesor:</strong> David Smith</p>
+          <p><strong>Horario:</strong> Lunes y Miércoles 15:30 - 17:00</p>
+          <p><strong>Temario:</strong></p>
+          <ul>
+            <li>Gramática</li>
+            <li>Comprensión Oral</li>
+            <li>Conversación</li>
+          </ul>
+          <p><strong>Tareas pendientes:</strong> 0</p>
+          <div class="progress mb-2">
+            <div class="progress-bar bg-primary" style="width: 55%">55% completado</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Educación Física -->
+  <div class="modal fade" id="modalEducacionFisica" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Educación Física</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Profesor:</strong> Pedro Martínez</p>
+          <p><strong>Horario:</strong> Martes y Jueves 15:30 - 17:00</p>
+          <p><strong>Temario:</strong></p>
+          <ul>
+            <li>Deportes en equipo</li>
+            <li>Entrenamiento físico</li>
+            <li>Salud y bienestar</li>
+          </ul>
+          <p><strong>Tareas pendientes:</strong> 0</p>
+          <div class="progress mb-2">
+            <div class="progress-bar bg-warning" style="width: 90%">90% completado</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Arte -->
+  <div class="modal fade" id="modalArte" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Arte</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Profesor:</strong> Carmen Diaz</p>
+          <p><strong>Horario:</strong> Viernes 15:00 - 16:30</p>
+          <p><strong>Temario:</strong></p>
+          <ul>
+            <li>Pintura</li>
+            <li>Dibujo</li>
+            <li>Historia del Arte</li>
+          </ul>
+          <p><strong>Tareas pendientes:</strong> 1</p>
+          <div class="progress mb-2">
+            <div class="progress-bar bg-info" style="width: 50%">50% completado</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // ===================== ANIMACIÓN NAVBAR =====================
+    let lastScrollTop = 0;
+    const sidebar = document.querySelector('.sidebar');
+
+    window.addEventListener('scroll', () => {
+      let st = window.pageYOffset || document.documentElement.scrollTop;
+      if (st > lastScrollTop){
+        sidebar.classList.remove('scroll-up');
+        sidebar.classList.add('scroll-down');
+      } else {
+        sidebar.classList.remove('scroll-down');
+        sidebar.classList.add('scroll-up');
+      }
+      lastScrollTop = st <= 0 ? 0 : st;
+    }, false);
+
+    // ===================== ANIMACIONES CARDS =====================
+    document.addEventListener('DOMContentLoaded', () => {
+      const targets = document.querySelectorAll('.curso-card, .logo-small');
+
+      targets.forEach((target, index) => {
+        target.style.transitionDelay = (index * 0.1) + "s";
+      });
+
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting){
+            entry.target.classList.add('visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+
+      targets.forEach(t => io.observe(t));
+    });
+  </script>
+
+</body>
+</html>
