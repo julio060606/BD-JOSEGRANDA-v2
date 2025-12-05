@@ -1,6 +1,6 @@
 <?php
 require('fpdf.php');        // Asegúrate de tener FPDF
-include('conexion.php');    // Debe exponer $conn (PostgreSQL)
+include("../../conexion/conexion.php");    // Debe exponer $conn (PostgreSQL)
 
 // ------------ utilidades ------------
 function es($txt) {

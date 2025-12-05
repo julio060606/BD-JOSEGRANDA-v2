@@ -1,5 +1,5 @@
 <?php
-include("conexion.php");
+include("../../conexion/conexion.php");
 include("header.php");
 
 // Consulta alumnos

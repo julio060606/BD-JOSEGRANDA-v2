@@ -2,53 +2,59 @@
 session_start();
 include("conexion.php");
 
-// 1. Capturar datos del formulario
-// Usamos null coalesce (??) para evitar errores de variables no definidas
-$nombre = $_POST['nombre_completo'] ?? '';
-$correo = $_POST['correo_electronico'] ?? '';
-$clave = $_POST['clave'] ?? '';
-$clave2 = $_POST['confirmar_clave'] ?? '';
+// Capturar datos del formulario de login
+$correo = $_POST['correo'];  // Este es el correo institucional
+$clave = $_POST['clave'];    // El DNI que se usa como contraseña
 
-// 2. Validar campos obligatorios
-if (empty($nombre) || empty($correo) || empty($clave) || empty($clave2)) {
-    echo "<script>alert('❌ Todos los campos son obligatorios.'); window.history.back();</script>";
-    exit();
-}
+// Consultar el usuario por correo institucional (en la tabla alumnocorreo)
+$sql = "SELECT ac.id, ac.alumno_dni, ac.correo_institucional 
+        FROM alumnocorreo ac 
+        WHERE ac.correo_institucional = $1";
+$resultado = pg_query_params($conn, $sql, array($correo));
 
-// 3. Validar coincidencia de contraseñas
-if ($clave !== $clave2) {
-    echo "<script>alert('❌ Las contraseñas no coinciden.'); window.history.back();</script>";
-    exit();
-}
+if (pg_num_rows($resultado) === 1) {
+    $usuario = pg_fetch_assoc($resultado);
 
-// 4. Verificar si el correo ya está registrado
-$sql_check = "SELECT id FROM usuarios WHERE correo_electronico = $1";
-$result_check = pg_query_params($conn, $sql_check, array($correo));
+    // Verificar que el DNI coincide con la clave proporcionada
+    if ($clave === $usuario['alumno_dni']) {
+        // Guardar datos en sesión
+        $_SESSION['usuario'] = $usuario['correo_institucional'];
+        $_SESSION['id_alumno'] = $usuario['id'];
+        $_SESSION['codigo'] = uniqid(); // Código único para la sesión
 
-if (pg_num_rows($result_check) > 0) {
-    echo "<script>alert('❌ El correo ya está registrado.'); window.history.back();</script>";
-    exit();
-}
+        // Obtener los datos del alumno desde la tabla 'alumno' usando el 'dni' recuperado
+        $sql_alumno = "SELECT * FROM alumno WHERE dni = $1";
+        $res_alumno = pg_query_params($conn, $sql_alumno, array($usuario['alumno_dni']));
+        
+        if ($res_alumno) {
+            $alumno = pg_fetch_assoc($res_alumno);
 
-// 5. Encriptar contraseña
-$clave_hash = password_hash($clave, PASSWORD_DEFAULT);
+            // Guardar todos los datos del alumno en sesión
+            $_SESSION['alumno_id'] = $alumno['id_alumno'];
+            $_SESSION['alumno_nombre'] = $alumno['nombres'];
+            $_SESSION['alumno_apellido'] = $alumno['apellidos'];
+            $_SESSION['alumno_fecha_nacimiento'] = $alumno['fecha_nacimiento'];
+            $_SESSION['alumno_dni'] = $alumno['dni'];
+            $_SESSION['alumno_grado'] = $alumno['grado'];
+            $_SESSION['alumno_codigo'] = $alumno['codigo'];
+            $_SESSION['alumno_foto'] = $alumno['foto_alumno'];
+            $_SESSION['alumno_seccion'] = $alumno['seccion']; // Aquí estamos asumiendo que 'seccion' existe
+        }
 
-// 6. Insertar nuevo usuario
-// AGREGADO: fecha_registro con valor NOW() por si la base de datos no lo pone automático
-$sql_insert = "INSERT INTO usuarios (nombre_completo, correo_electronico, clave_hash, fecha_registro) VALUES ($1, $2, $3, NOW())";
-$result_insert = pg_query_params($conn, $sql_insert, array($nombre, $correo, $clave_hash));
-
-if ($result_insert) {
-    // Registro exitoso
-    header("Location: login.html?registro=exitoso");
-    exit();
+        // Redirigir al portal institucional
+                header("Location: /josegrandaproyecto992025/avances/avances2/avances/avances/portalestudiante/index.php");
+                exit();
+    } else {
+        echo "<script>
+            alert('❌ Contraseña incorrecta.');
+            window.history.back();
+        </script>";
+        exit();
+    }
 } else {
-    // Si falla, mostramos el error exacto de PostgreSQL
-    $error_real = pg_last_error($conn);
     echo "<script>
-        alert('❌ Error al registrar usuario: " . addslashes($error_real) . "'); 
+        alert('❌ Correo no registrado.');
         window.history.back();
     </script>";
     exit();
 }
-?>

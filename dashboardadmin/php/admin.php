@@ -4,7 +4,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-include("conexion.php");
+include("../../conexion/conexion.php");
 
 /*
  * DATOS PRINCIPALES
@@ -91,7 +91,7 @@ $ultimos_pagos_res = pg_query($conn, "SELECT p.id_pago, a.nombres AS alumno_nomb
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
 <!-- CSS personalizado -->
-<link rel="stylesheet" href="CSS/admin.css">
+<link rel="stylesheet" href="../../CSS/admin.css">
 
 <!-- Chart.js -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

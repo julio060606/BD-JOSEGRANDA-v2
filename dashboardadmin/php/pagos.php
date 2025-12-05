@@ -4,7 +4,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-include("conexion.php");   // conexión PostgreSQL -> $conn
+include("../../conexion/conexion.php");  // conexión PostgreSQL -> $conn
 include("header.php");     // navbar + sidebar + <main>
 
 // Consulta pagos con nombre de alumno, monto del taller, sección y estado

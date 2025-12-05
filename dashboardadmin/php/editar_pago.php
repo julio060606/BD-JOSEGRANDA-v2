@@ -1,6 +1,6 @@
 <?php
 // editar_pago.php
-include("conexion.php");
+include("../../conexion/conexion.php");
 
 // Obtener el ID del pago
 $id_pago = $_GET['id'] ?? 0;

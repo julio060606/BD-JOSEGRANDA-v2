@@ -2,7 +2,7 @@
 // header.php
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
-include("conexion.php");
+include("../../conexion/conexion.php");
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -16,7 +16,7 @@ include("conexion.php");
   <!-- FontAwesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <!-- Estilos -->
-  <link rel="stylesheet" href="CSS/admin.css">
+  <link rel="stylesheet" href="../../CSS/admin.css">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">

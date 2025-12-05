@@ -1,5 +1,5 @@
 <?php
-include("conexion.php");
+include("../../conexion/conexion.php");
 session_start();
 
 $res = pg_query($conn, "SELECT h.descripcion, h.fecha_hora, u.nombre_usuario
